@@ -1,0 +1,6 @@
+C:\Users\t852338\Documents\python-scripts\peeringdb>python -m unittest peeringdb_test.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 38.158s
+
+OK
