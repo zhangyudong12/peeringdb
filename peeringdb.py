@@ -7,6 +7,7 @@
 import requests
 import json
 import ipaddress
+import sys
 
 apiurl = 'https://www.peeringdb.com/api/'
 
@@ -18,6 +19,7 @@ def get_input(prompt=''):
         line = input(prompt)
     return line
 
+
 def fetchResults(url):
     try:
         response = requests.get(url)
@@ -27,13 +29,12 @@ def fetchResults(url):
         exit(1)
     return response
 
-"""The peeringdb output is nested dictionary.
- This function is to getting the data from inner dict()
-"""
+
 def lookupNet(search):
     url = "%snet?id=%s" % (apiurl, search)
     results = fetchResults(url)
     return results['data'][0]['name']
+
 
 # input:asn, output:IX list and network aggrerate speed of all IXs
 def getIX(search):
@@ -49,6 +50,7 @@ def getIX(search):
                 ix_results = fetchResults(url)
                 ix_list.append(ix_results['data'][0]['name'])
     return ix_list,ix_speed
+
 
 # input:IX name and asn, output:sorted network list exclude the input asn
 def findPeerings(search, asn):
@@ -69,7 +71,15 @@ def findPeerings(search, asn):
 
 
 def main():
+    asn_report = dict()
     asn = int(get_input('Enter Network AS number: '))
+
+    print_to_file = get_input('Print the output to file y/n ?: ')
+    if print_to_file.upper() == 'Y':
+        orig_stdout = sys.stdout
+        f = open('script_cmd_output.txt', 'w')
+        sys.stdout = f
+
     ix_list_asn, total_agg_speed_m = getIX(asn)
     ix_list_asn.sort()
     total_agg_speed = total_agg_speed_m/1000
@@ -80,6 +90,7 @@ def main():
     print('\n'.join(ix_list_asn))
     print('~' * 79)
     print(f"Total Aggregate speed =  {total_agg_speed}Gbps")
+    asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed}
 
     all_peers = dict()
     for ix in ix_list_asn:
@@ -101,6 +112,8 @@ def main():
     total_organizations = len(mergedset)
     print('~' * 79)
     print(f"Total unique organization peering's = {total_organizations}")
+    asn_report["Total_peers"]  = total_peers
+    asn_report["Total_organizations"] = total_organizations
 
     print('\n\n')
     print("Additional information : ")
@@ -112,13 +125,34 @@ def main():
         else:
             continue
 
-    with open('ix_net_data_output.json','w') as json_file:
-        json.dump(all_peers, json_file, indent=2)
+    with open('asn_report.json','w') as json_file1:
+        json.dump(asn_report, json_file1, indent=2)
+    json_file1.close()
+
+    with open('ix_net_report.json','w') as json_file2:
+        json.dump(all_peers, json_file2, indent=2)
+    json_file2.close()
+
 
 if __name__ == "__main__":
     main()
 
-"""
- The specific Org might have more than one peer connections in one or more IXs.
- This additional information provides the Orgs list and nummber of connections
+
+
+
+""" Note:
+
+ 1 The specific Org might have more than one peer connections in one or more IXs.
+ The additional information provides the Orgs list and nummber of connections
+
+ 2 The output json file will be exported to mysql database used for web app
+
+ 3 The peeringdb output is nested dictionary. some data need to be retrived from inner dict()
+
+ 4 Ocationally the peeringDB API server doesn't respond to https request, that will interupt the running script.
+   this will occurs likely when the network being queried has widely distributed in >100 IXs
+
+ 5 Use asn = 49909 for quick test as it only exists at 3x IXs.
+
+
 """
