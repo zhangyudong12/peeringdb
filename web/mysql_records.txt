@@ -1,0 +1,69 @@
+mysql> show tables;
++-----------------------------------+
+| Tables_in_zhangyudong12$peeringdb |
++-----------------------------------+
+| asns                              |
+| ixs                               |
++-----------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> describe asns;
++----------------------+---------+------+-----+---------+----------------+
+| Field                | Type    | Null | Key | Default | Extra          |
++----------------------+---------+------+-----+---------+----------------+
+| id                   | int(11) | NO   | PRI | NULL    | auto_increment |
+| ASN                  | int(11) | YES  |     | NULL    |                |
+| Total_ix             | int(11) | YES  |     | NULL    |                |
+| Total_agg_speed_Gbps | int(11) | YES  |     | NULL    |                |
+| Total_peers          | int(11) | YES  |     | NULL    |                |
+| Total_organizations  | int(11) | YES  |     | NULL    |                |
++----------------------+---------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+
+mysql> describe ixs;
++----------+---------------+------+-----+---------+----------------+
+| Field    | Type          | Null | Key | Default | Extra          |
++----------+---------------+------+-----+---------+----------------+
+| id       | int(11)       | NO   | PRI | NULL    | auto_increment |
+| Ix_name  | varchar(4096) | YES  |     | NULL    |                |
+| Net_name | varchar(4096) | YES  |     | NULL    |                |
++----------+---------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+
+mysql> select * from asns;
++----+-------+----------+----------------------+-------------+---------------------+
+| id | ASN   | Total_ix | Total_agg_speed_Gbps | Total_peers | Total_organizations |
++----+-------+----------+----------------------+-------------+---------------------+
+|  1 | 49909 |        3 |                    5 |         185 |                 110 |
++----+-------+----------+----------------------+-------------+---------------------+
+1 row in set (0.01 sec)
+
+
+mysql> select * from ixs;
+
+| id | Ix_name   | Net_name
+
+
+|  1 | Balcan-IX | Ad Net Market Media SA,BALCAN-IX Route Servers,BALCAN-IX Route Servers,Cloudflare,DOTRO Telecom,Distinct New Media,Expansion Computers,Facebook Inc,Facebook Inc,Hurricane Electric,I.S. Centr
+ul de Telecomunicatii Speciale,IPTP Networks,Infinity Telecom SRL,M247,M247,Microsoft,Microsoft,Moldtelecom,NAV Communications,Neotel,Neterra Ltd.,Pixel View SRL,Prime Telecom,RoEduNet,Serbia BroadBand,Serbian
+ Open eXchange,TENNET TELECOM,TV SAT 2002,TeenTelecom,Telehouse,Telehouse,Telekom Romania Communications S.A.,Türk Telekom International,VOXILITY,Valve Corporation,Valve Corporation,Verizon Digital Media Servi
+ces (EdgeCast Networks),Yahoo!
+                                                                                                                                                                                                                |
+|  2 | InterLAN  | Akamai Technologies,AllNet Telecom,Ambra,Ambra,Astimp It Solution,Balkan Internet Exchange,BelCloud Hosting,BelCloud Hosting,Bitdefender,Blizzard Entertainment,CNETWORK,Chroot,Cisco Umbrella
+,Cloudflare,CobraNET,Colt,Computer Wired,Comunicatii Starnet Media,Conect Intercom,Create Online,DATA ZYX,DIGITAL CONSTRUCTION NETWORK SRL,DNS-OARC-112,Distinct New Media,DreamServer.ro,Duodecad IT Services Lu
+xembourg,Dynamic Distribution,Expansion Computers,FIDELNET,Facebook Inc,Facebook Inc,G-Core Labs,GMB Computers,Gemenii Network,Gemenii Network,Google LLC,Google LLC,HUAWEI CLOUD,HUAWEI CLOUD,Hurricane Electric
+,I.S. Centrul de Telecomunicatii Speciale,INTERKVM HOST,IRIDEOS (formerly Enter),ISC F-ROOT BBU1,Inovare-Prim,Institutul National de Cercetare-Dezvoltare in informatica - ICI Bucuresti,InterLAN Route Servers,I
+nterLAN Route Servers,Internet Oltenia,Intersat Romania,LANSOFT,Limelight Networks Global,M247,M247,Massive Telecom,Microsoft,Microsoft,Millennium IT,Moldtelecom,NAV Communications,NET GATE COMUNICATII,NEXT LE
+VEL BUSINESS,NetActuate,NetIX Communications Ltd.,NetIX Communications Ltd.,NetIX Communications Ltd.,Netflix,Orange Romania S.A.,Packet Clearing House,Packet Clearing House AS42,Prime Telecom,ProNET Solutii I
+T SRL,ProNET Solutii IT SRL,Quantil Networks,RIPE NCC K-Root Operations,RIPE NCC RIS Project,RNT,RoEduNet,SC MEDIA SUD,SC NETFIL,STS,Sanos Consulting International SRL,StarNet Moldova,Stylish by A & L,TELEPLUS
+,TENNET TELECOM,TFIBER,TFIBER,TV SAT 2002,TeenTelecom,Telekomunikasi Indonesia Int (TELIN),Teletrans SA,Tier SRL,Türk Telekom International,VIVA Telecom,VOXILITY,Valve Corporation,VeriSign Global Registry Serv
+ices,Verizon Digital Media Services (EdgeCast Networks),Yahoo!,Yahoo!,efectRO,iNES Group,trabia network |
+|  3 | RoNIX     | AllNet Telecom,Astimp It Solution,BelCloud Hosting,BizTelecom,CacheFly,Chroot,Cloudflare,Comunicatii Starnet Media,Comunicatii Starnet Media,DOTRO Telecom,DOTRO Telecom,Deutsche Telekom / ex
+ GTS Central Europe,DialTelecomRO/AKTA,Distinct New Media,Facebook Inc,Facebook Inc,G-Core Labs,Google LLC,Google LLC,HUAWEI CLOUD,HUAWEI CLOUD,Hurricane Electric,Infinity Telecom SRL,M247,NetServ Consult SRL,
+Netflix,Netnod,Netnod,Orange Romania S.A.,Prime Telecom,RoEduNet,RoNIX Route Servers,STS,StarNet Moldova,TELEPLUS,TV SAT 2002,Teletrans SA,Türk Telekom International,VOXILITY,Vodafone Romania,iNES Group,iNES G
+roup,trabia network
+                                                                                                                                                                                                                |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
