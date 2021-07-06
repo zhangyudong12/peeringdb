@@ -49,6 +49,7 @@ def getIX(search):
                 url = "%six?ixlan_id=%s" % (apiurl, ixlan['ixlan_id'])
                 ix_results = fetchResults(url)
                 ix_list.append(ix_results['data'][0]['name'])
+    ix_list.sort()
     return ix_list,ix_speed
 
 
@@ -65,73 +66,76 @@ def findPeerings(search, asn):
         for net in results2['data']:
             if net['asn'] != asn:
                 net_name = lookupNet(net['net_id'])
-                net_list.append(net_name)
+                net_name_alias = 'AS_' + str(net['asn']) + '_' + net_name
+                net_list.append(net_name_alias)
     net_list.sort()
     return net_list
 
 
-def main():
-    asn_report = dict()
-    asn = int(get_input('Enter Network AS number: '))
+def print_report(title,input_dict,flag,input_lenth):
+    print('~' * 79)
+    print(title)
+    print('~' * 79)
+    if flag == 'join':
+        for key,value in input_dict.items():
+            print(f"IX: {key}   Peering's : {input_lenth}")
+            print('\n'.join(value))
+    else:
+        for key,value in input_dict.items():
+            print (key,value)
 
+
+def export_file(file_name,contents):
+    with open(file_name, 'w') as json_file:
+        json.dump(contents, json_file, indent=2)
+    json_file.close()
+
+
+def main():
+    asn = int(get_input('Enter Network AS number: '))
     print_to_file = get_input('Print the output to file y/n ?: ')
     if print_to_file.upper() == 'Y':
         orig_stdout = sys.stdout
         f = open('script_cmd_output.txt', 'w')
         sys.stdout = f
 
+    asn_report = dict()
     ix_list_asn, total_agg_speed_m = getIX(asn)
-    ix_list_asn.sort()
+    ix_set_asn = set(ix_list_asn)
     total_agg_speed = total_agg_speed_m/1000
-    total_ix = len(ix_list_asn)
+    total_ix = len(ix_set_asn)
     print('~' * 79)
-    print(f"Network with ASN = {asn} exists in {total_ix} exchanging points")
-    print('~' * 79)
-    print('\n'.join(ix_list_asn))
-    print('~' * 79)
-    print(f"Total Aggregate speed =  {total_agg_speed}Gbps")
-    asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed}
+    print(f"Network with ASN = {asn} exists in {total_ix} exchanging points \n")
+    print('\n'.join(ix_set_asn))
 
     all_peers = dict()
-    for ix in ix_list_asn:
+    for ix in ix_set_asn:
         all_peers[ix] = findPeerings(ix,asn)
         sub_total_peers = len(all_peers[ix])
-        print('~' * 79)
-        print(f"Internet Exchange: {ix}  Total peers : {sub_total_peers}")
-        print('~' * 79)
-        print('\n'.join(all_peers[ix]))
+        print_report("ASN Peering's List per IX :", all_peers, 'join', sub_total_peers)
 
     mergedlist = []
     for ix in all_peers:
         mergedlist.extend(all_peers[ix])
     mergedlist.sort()
     total_peers = len(mergedlist)
-    print('~' * 79)
-    print(f"Total peering's = {total_peers}")
     mergedset = set(mergedlist)
     total_organizations = len(mergedset)
-    print('~' * 79)
-    print(f"Total unique organization peering's = {total_organizations}")
-    asn_report["Total_peers"]  = total_peers
-    asn_report["Total_organizations"] = total_organizations
+    asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed,"Total_ix":total_ix,"Total_peers":total_peers,"Total_organizations":total_organizations}
+    print_report("ASN Network Executive Summary :", asn_report, 'na', 1)
 
-    print('\n\n')
-    print("Additional information : ")
+
+    print("\n\nThe Additional information for peering's with more than one connection points: ")
     print('~' * 79)
     peer_count = {org: mergedlist.count(org) for org in mergedset}
     for peer, count in peer_count.items():
         if count > 1:
-            print(f"{peer} : number of connection points  {count}")
+            print(f"{peer} : #number of connection points  {count}")
         else:
             continue
 
-    with open('asn_report.json','w') as json_file1:
-        json.dump(asn_report, json_file1, indent=2)
-    json_file1.close()
-
-    with open('ix_net_report.json','w') as json_file2:
-        json.dump(all_peers, json_file2, indent=2)
-    json_file2.close()
+    export_file('asn_report.json', asn_report)
+    export_file('ix_net_report.json', all_peers)
 
 
 if __name__ == "__main__":
@@ -150,9 +154,9 @@ if __name__ == "__main__":
  3 The peeringdb output is nested dictionary. some data need to be retrived from inner dict()
 
  4 Ocationally the peeringDB API server doesn't respond to https request, that will interupt the running script.
-   this will occurs likely when the network being queried has widely distributed in >100 IXs
+   this will occurs likely when the network being queried has widely distributed in >50 IXs
 
- 5 Use asn = 49909 for quick test as it only exists at 3x IXs.
+ 5 Use ASN = 49909/49902/49904 or ASN = 852 for quick test as all that only exist in less than 3x IXs.
 
 
 """
