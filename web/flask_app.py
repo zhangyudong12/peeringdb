@@ -1,3 +1,10 @@
+# Author: Boris Zhang
+
+#Purpose: Generate a peeringDB state report for a specific network
+
+#Input: asn_report.json ix_net_report.json
+#Display: table1 - based exicutive summary table2 - Peering list per IX
+
 from flask import Flask, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 import json
@@ -49,29 +56,33 @@ class Ix(db.Model):
 
 asn_report = dict()
 ix_report = dict()
+data_reload = False
 
 with open('/home/zhangyudong12/mysite/asn_report.json') as report_file1:
      asn_report = json.load(report_file1)
-report_file1.close()
-
-existing_asn = Asn.query.filter(Asn.ASN == asn_report["ASN"]).first()
-
-if not existing_asn:
-    asn_record = Asn(asn_report["ASN"],asn_report["Total_ix"],asn_report["Total_agg_speed(Gbps)"],asn_report["Total_peers"],asn_report["Total_organizations"])
-    db.session.add(asn_record)
-    db.session.commit()
 
 with open('/home/zhangyudong12/mysite/ix_net_report.json') as report_file2:
      ix_report = json.load(report_file2)
-report_file2.close()
 
-for ix,net in ix_report.items():
-    net_list_str = ','.join(net)
-    existing_ix = Ix.query.filter(Ix.Net_name == net_list_str).first()
-    if not existing_ix:
+existing_asn = Asn.query.filter(Asn.ASN == asn_report["ASN"]).first()
+if not existing_asn:
+    db.session.query(Asn).delete()
+    asn_record = Asn(asn_report["ASN"],asn_report["Total_ix"],asn_report["Total_agg_speed(Gbps)"],asn_report["Total_peers"],asn_report["Total_organizations"])
+    db.session.add(asn_record)
+    db.session.commit()
+    data_reload = True
+
+
+if data_reload:
+    db.session.query(Ix).delete()
+    for ix,net in ix_report.items():
+        net_list_str = ','.join(net)
         ix_record = Ix(ix,net_list_str)
         db.session.add(ix_record)
         db.session.commit()
+
+report_file1.close()
+report_file2.close()
 
 
 @app.route("/", methods=["GET", "POST"])
