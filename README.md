@@ -7,18 +7,21 @@ executable script
 python peeringdb.py
 
 # Input
-ASN number
+ASN number :
 
-output to file Y/N ?
+output to file y/n ?
 
 # Output
-asn_report.json
 
-ix_net_report.json
+total IXs, total peers, total unique peering organizations, aggregate peering speed,peerings network list per IX, orgination list which has more connection points
 
-report on screen ( when output to file is not checked)
+asn_report.json file
 
-script_cmd_output.txt (when output to file is checked)
+ix_net_report.json file
+
+report on screen ( when "output to file" is not checked)
+
+script_cmd_output.txt file (when "output to file" is checked)
 
 
 # web app
@@ -28,9 +31,9 @@ script_cmd_output.txt (when output to file is checked)
 flask + mysql
 
 ## Input
-asn_report.json
+asn_report.json file
 
-ix_net_report.json
+ix_net_report.json file
 
 ## Output
 
@@ -38,7 +41,7 @@ Create mysql table "asns" and "ixs"
 
 Insert non-duplicated record to mysql table
 
-Render the template using data from mysql
+Render the template with mysql data
 
 Display ASN and IX report in table format
 
@@ -51,17 +54,17 @@ asn_report.json - report in json format
 
 ix_net_report.json - report in json format 
 
-peeringdb_test.py - unit test result capture
+peeringdb_test.py - unit test script
 
-unit_test_outport.txt - unit test result capture 
+unit_test_outport.txt - unit test result capture file
 
 flask_app.py - web app script
 
 main_page.html - jinja2 based HTML file
 
-mysql_records.txt - web app test result capture 
+mysql_records.txt - sql command line output 
 
-web_report.png - screen capture of web report page
+web_report.png - screen shot of web app
 
 # PeeringDB API reference
 https://www.peeringdb.com/api/net?asn=xxx | net?id=xxx
