@@ -1,6 +1,7 @@
 {
-  "ASN": 49909,
-  "Total_agg_speed(Gbps)": 5.0,
-  "Total_peers": 185,
-  "Total_organizations": 110
+  "ASN": 46489,
+  "Total_agg_speed(Gbps)": 6090.0,
+  "Total_ix": 62,
+  "Total_peers": 16381,
+  "Total_organizations": 6785
 }

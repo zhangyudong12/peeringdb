@@ -1,0 +1,141 @@
+C:\Users\t852338\Documents\python-scripts\peeringdb>peeringdb_v3.py
+Enter Network AS number: 46489
+Print the output to file y/n ?: n
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Network with ASN = 46489 exists in 62 exchanging points
+
+Equinix Sydney
+Equinix Palo Alto
+NL-ix
+Equinix Singapore
+KINX
+TorIX
+Equinix Los Angeles
+Equinix Warsaw
+DE-CIX Dusseldorf
+ESPANIX Madrid Lower LAN
+SLIX - Salt Lake City Internet Exchange
+DATAIX
+IX.br (PTT.br) Rio de Janeiro
+Peering.cz
+DE-CIX Marseille
+QIX
+MIX-IT
+Equinix Ashburn
+Any2Denver
+DE-CIX Madrid
+Equinix Chicago
+Netnod Stockholm BLUE -- MTU1500
+Thailand IX (TH-IX)
+Equinix New York
+BBIX Tokyo
+Any2West
+Extreme IX Mumbai
+DE-CIX Frankfurt
+HKIX
+MSK-IX Saint-Petersburg
+BKNIX
+Equinix Hong Kong
+Netnod Stockholm GREEN -- MTU1500
+Netnod Stockholm GREEN -- MTU4470
+SIX Seattle
+Extreme IX Chennai
+CyrusOne IX Houston
+Equinix Paris
+AMS-IX
+Equinix Miami
+THINX Warsaw
+BCIX
+JPNAP Tokyo
+MSK-IX Moscow
+MegaIX Sydney
+NIX.CZ
+DE-CIX Mumbai
+EdgeIX - Sydney
+Digital Realty Atlanta
+SIX Seattle (Jumbo)
+LINX LON1
+IX.br (PTT.br) São Paulo
+NWAX
+Netnod Stockholm BLUE -- MTU4470
+MegaIX Singapore
+Equinix Tokyo
+FL-IX
+Equinix Dallas
+VIX
+IX.br (PTT.br) Fortaleza
+France-IX Paris
+JPIX TOKYO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN Peering's List per IX :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IX: Equinix Sydney   Peering's : 240
+AS_10143_Exetel Pty Ltd
+AS_109_Cisco Systems, Inc.
+AS_1273_Vodafone Global Network
+AS_131248_GOTV
+AS_131270_Planet Technology Group
+AS_131446_MMG-AU
+AS_13150_Cato Networks
+AS_132245_Data Express Pty Ltd
+AS_132255_PrimoWireless Ltd
+AS_132255_PrimoWireless Ltd
+AS_132330_Hillsong International
+AS_132528_Digicel Australia
+AS_132528_Digicel Australia
+AS_132579_Tonga Cable Limited
+AS_132847_Network Solutions Group
+AS_13335_Cloudflare
+AS_133579_MyRepublic (NZ) Ltd
+AS_133612_Vodafone Hutchison Australia
+AS_133616_Beachhead Group
+
+
+...
+
+...
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN Network Executive Summary :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN 46489
+Total_agg_speed(Gbps) 6090.0
+Total_ix 62
+Total_peers 16381
+Total_organizations 6785
+
+
+The Additional information for peering's with more than one connection points:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AS_265075_Evolution IP Telefonia e Informática : #number of connection points  2
+AS_35179_Korbank : #number of connection points  2
+AS_197790_Actus S.A. : #number of connection points  4
+AS_262352_NOVA TELECOM  AS262352 : #number of connection points  2
+AS_262983_Net Barretos : #number of connection points  3
+AS_22363_Powerhouse Management, Inc. : #number of connection points  5
+AS_50581_UTG : #number of connection points  5
+AS_23470_ReliableSite.Net : #number of connection points  3
+AS_32748_Steadfast Networks : #number of connection points  2
+AS_15456_InterNetX GmbH : #number of connection points  2
+AS_16734_Sun Fibernet : #number of connection points  2
+AS_17978_Servcorp Australian Holdings Pty Ltd : #number of connection points  5
+AS_263401_PopFibra Internet Ltda : #number of connection points  2
+AS_39591_Global-e Datacenter BV : #number of connection points  2
+AS_2914_NTT Global IP Network : #number of connection points  12
+AS_3580_Planet Access Networks : #number of connection points  2
+AS_16347_ADISTA : #number of connection points  6
+AS_577_Bell Canada Backbone : #number of connection points  4
+AS_60294_Deutsche Glasfaser GmbH : #number of connection points  2
+AS_201701_Freifunk Rheinland e.V. : #number of connection points  6
+AS_22792_MOUNTAINET : #number of connection points  2
+AS_9304_HGC : #number of connection points  18
+AS_134672_Aquoz Solutions : #number of connection points  2
+AS_262296_Windx Networks : #number of connection points  2
+AS_328145_Lyca Digital : #number of connection points  3
+AS_263569_Direct WiFi Telecom : #number of connection points  3
+AS_10103_HK Broadband Network : #number of connection points  2
+AS_6717_Internet Central Ltd : #number of connection points  2
+AS_31510_Innsbrucker Kommunalbetriebe : #number of connection points  3
+AS_266438_GIGANETSUL : #number of connection points  2
+
+...
