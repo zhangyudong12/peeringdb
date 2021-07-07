@@ -77,10 +77,8 @@ def getIX(search):
     return ix_list,fac_list,ix_speed
 
 
-# input:IX name and asn, output:sorted network list exclude the input asn
-
-
 # def findPeerings(search, asn):
+# input:IX name and asn, output:sorted network list exclude the input asn
 def findPeerings(search, asn):
     # match exact name
     url = "%six?name=%s" % (apiurl, search)
