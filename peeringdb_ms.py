@@ -109,14 +109,15 @@ def findPeerings(search, asn):
     return net_list
 
 
-def print_report(title,input_dict,flag,input_lenth):
+def print_report(title,input_dict,flag):
     print("\n")
     print('~' * 79)
     print(title)
     print('~' * 79)
     if flag == 'join':
         for key,value in input_dict.items():
-            print(f"IX: {key}   Peering's : {input_lenth}")
+            sub_total_peers = len(value)
+            print(f"\nIX: {key}   Peering's : {sub_total_peers}")
             print('\n'.join(value))
     else:
         for key,value in input_dict.items():
@@ -155,8 +156,6 @@ def main():
     all_peers = dict()
     for ix in ix_set_asn:
         all_peers[ix] = findPeerings(ix,asn)
-        sub_total_peers = len(all_peers[ix])
-        print_report("ASN Peering's List per Public IX :", all_peers, 'join', sub_total_peers)
 
     mergedlist = []
     for ix in all_peers:
@@ -166,7 +165,9 @@ def main():
     mergedset = set(mergedlist)
     total_organizations = len(mergedset)
     asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed,"Total_ix":total_ix,"Total_peers":total_peers,"Total_organizations":total_organizations}
-    print_report("ASN Network Executive Summary :", asn_report, 'na', 1)
+
+    print_report("ASN Network Executive Summary :", asn_report, 'na')
+    print_report("ASN Peering's List per Public IX :", all_peers, 'join')
 
     print("\n\nThe additional information for IXs where the ASN has more connections: ")
     print('~' * 79)
