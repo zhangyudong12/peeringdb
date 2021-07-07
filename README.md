@@ -2,9 +2,13 @@
 
 executable script
 
+peeringdb_ms.py - multi-threading version script, test script not applied
+
 ## Usage
 
 python peeringdb.py
+
+python peeringdb_ms.py
 
 # Input
 ASN number :
