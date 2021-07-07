@@ -1,4 +1,4 @@
-# peeringdb.py
+# peeringdb.py / peeringdb_ms.py
 
 executable script
 
