@@ -1,0 +1,6 @@
+Generate ASN 701 report
+
+peeringdb.py (non multi-threading script)  Script execution took: 0:05:19    
+
+peeringdb_ms.py (multi-threading script)   Script execution took: 0:01:00
+  
