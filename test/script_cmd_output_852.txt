@@ -1,0 +1,1157 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Network with ASN = 852 exists in 3 Public Exchange Points and 4 Private Peering Facilities
+
+Public IXs:
+SIX Seattle
+Equinix Chicago
+DE-CIX New York
+
+Private FAs:
+Digital Realty NYC (111 8th Ave)
+Digital Realty NYC (60 Hudson)
+Equinix CH1/CH2/CH4 - Chicago
+Westin Building Seattle
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN Network Executive Summary :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN 852
+Total_agg_speed(Gbps) 150.0
+Total_ix 3
+Total_peers 934
+Total_organizations 665
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ASN Peering's List per Public IX :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+IX: SIX Seattle   Peering's : 395
+AS_101_Pacific Northwest Gigapop
+AS_101_Pacific Northwest Gigapop
+AS_10242_US Internet
+AS_10310_Yahoo!
+AS_10310_Yahoo!
+AS_10594_Cutting Edge Communications
+AS_10835_Visionary Communications, Inc.
+AS_10848_NTT DATA Services - HCLS Cloud
+AS_10947_Mountain West Technologies
+AS_10973_Scatter Creek InfoNet
+AS_11038_Salish Networks
+AS_11046_Little Apple Technologies
+AS_11090_Matanuska Telephone Association
+AS_11090_Matanuska Telephone Association
+AS_11164_Internet2 I2PX
+AS_11233_Gorge Networks
+AS_11274_TierPoint Seattle
+AS_11385_Nowyr, inc.
+AS_11404_Wave Division Holdings
+AS_11492_CABLE ONE
+AS_11537_UCAID
+AS_11686_Education Networks of America, Inc.
+AS_11708_KCFiber
+AS_11796_Airstream Communications
+AS_11922_Real Networks
+AS_11924_Montana Opticom AS11924
+AS_11961_Mid-Rivers Telephone Cooperative
+AS_12189_PhoenixNAP
+AS_131477_Huajuan
+AS_132203_Tencent Global
+AS_132203_Tencent Global
+AS_13331_Metapeer
+AS_13331_Metapeer
+AS_13335_Cloudflare
+AS_13370_LocalTel Communications
+AS_13370_LocalTel Communications
+AS_13414_Twitter, Inc.
+AS_134176_Rainbow network
+AS_134526_EVERY DAY TECHNOLOGY CO
+AS_136175_Serverhosh Internet Service
+AS_13722_Default Route, LLC
+AS_13739_DataCenter IP
+AS_13768_Aptum Technologies
+AS_13871_Telebyte NW
+AS_14280_NetNation Communications Inc.
+AS_14340_Salesforce.com
+AS_14361_HopOne Internet Corp.
+AS_14371_Paul Bunyan Communications
+AS_14380_Opus Interactive, Inc.
+AS_14500_Galaxybroadband Communications Inc
+AS_14593_SpaceX Starlink
+AS_14701_Faction Inc.
+AS_15133_Verizon Digital Media Services (EdgeCast Networks)
+AS_15133_Verizon Digital Media Services (EdgeCast Networks)
+AS_15169_Google LLC
+AS_15169_Google LLC
+AS_15177_StarTouch, Inc.
+AS_15177_StarTouch, Inc.
+AS_15190_CTS LanguageLink
+AS_15224_Adobe Systems
+AS_15238_Bill & Melinda Gates Foundation
+AS_15247_Radiant Communications
+AS_15305_Syringa Networks
+AS_15695_Expereo International bv
+AS_16164_Sohonet Ltd
+AS_16276_OVHcloud
+AS_16406_Intermedia.net, Inc.
+AS_16509_Amazon.com
+AS_16509_Amazon.com
+AS_16552_Tiggee
+AS_16584_IonSwitch
+AS_16652_Riseup Networks
+AS_16713_NoaNet
+AS_16713_NoaNet
+AS_17017_campuscolo.com
+AS_17350_Moody's
+AS_1798_State of Oregon
+AS_18106_ViewQwest
+AS_1828_Unitas Global
+AS_18451_LES.NET
+AS_18530_ISOMEDIA, Inc.
+AS_18647_Accel Net
+AS_18888_Zillow Group
+AS_18888_Zillow Group
+AS_18988_City West Cable & Telephone
+AS_19016_Westman Communications Group
+AS_19116_Washington Broadband
+AS_19171_Stargate Connections Inc.
+AS_19186_GMCHOSTING
+AS_19518_Rock Island Technology Solutions
+AS_19518_Rock Island Technology Solutions
+AS_19528_ByteGrid Data Center Partners
+AS_19551_Imperva
+AS_19653_CTS Communications Corp.
+AS_19662_Uniserve Communications Corp
+AS_19679_Dropbox
+AS_19754_The Fusion Network
+AS_1982_Northwest Nexus
+AS_19969_Joe's Datacenter
+AS_20055_Wholesail Networks - Main
+AS_201106_Spartan Host
+AS_20115_Charter Communications
+AS_20119_Arrow Group
+AS_20161_TeraGo Networks Inc.
+AS_20394_Rainier Connect
+AS_2044_Infinity Internet
+AS_20473_The Constant Company, LLC
+AS_20474_NCI Data.com
+AS_208188_Puget Sound Networks
+AS_20940_Akamai Technologies
+AS_21525_Seattle Public Library
+AS_21632_Grizzly Broadband LLC
+AS_21709_Implex.net
+AS_21743_Atlas Networks
+AS_21804_Access Communications Co-operative
+AS_21859_Zenlayer Inc
+AS_21928_T-Mobile USA
+AS_21947_Blackfoot Communications Inc
+AS_21947_Blackfoot Communications Inc
+AS_21949_Beanfield Technologies
+AS_22546_Weyerhaeuser AS 22546
+AS_22616_Zscaler AS22616
+AS_22616_Zscaler AS22616
+AS_22697_ROBLOX
+AS_22697_ROBLOX
+AS_22702_Magna5
+AS_22799_Eastlink (Delta)
+AS_22822_Limelight Networks Global
+AS_22822_Limelight Networks Global
+AS_22995_Xplornet Communications Inc.
+AS_23033_Wowrack.com
+AS_23138_First Step Internet
+AS_23138_First Step Internet
+AS_23175_PogoZone
+AS_23175_PogoZone
+AS_23265_Pocketinet Communications
+AS_23393_NuCDN
+AS_23473_Pavlov Media INC.
+AS_23738_Bandle City Internet Limited
+AS_24482_SG.GS
+AS_2497_Internet Initiative Japan Inc. (IIJ)
+AS_25192_CZ.NIC, z.s.p.o.
+AS_2544_King County I-NET
+AS_2544_King County I-NET
+AS_25668_AEBC Internet Corp.
+AS_25764_iFIBER Communications
+AS_25819_Collier Technologies
+AS_25899_LS Networks
+AS_25905_FireServe, LLC
+AS_26038_Elevate Technology Group
+AS_26088_Inland Telephone Company
+AS_26156_Verus Corporation, Inc.
+AS_26223_Silver Star Communications
+AS_2635_Automattic
+AS_26370_PALCOM
+AS_2639_Zoho
+AS_26446_Ostra LLC
+AS_26548_Purevoltage Enterprises
+AS_26792_CSS Communications
+AS_26801_Zito Media
+AS_26935_Wholesail Networks - legacy Noel
+AS_26935_Wholesail Networks - legacy Noel
+AS_27008_BendTel
+AS_27281_Quantcast
+AS_27281_Quantcast
+AS_27400_Clearfly Communications
+AS_27475_Wayfair LLC
+AS_27618_QuickStream Internet
+AS_2906_Netflix
+AS_2906_Netflix
+AS_293_Energy Sciences Network (ESnet)
+AS_29791_Internap
+AS_29802_Hivelocity INC
+AS_29838_Atlantic Metro
+AS_29933_Veracity Networks
+AS_30076_Inland Northwest Health Services
+AS_30081_CacheFly
+AS_30110_Advanced Communications Technology
+AS_30261_Treasure State Internet
+AS_30340_TierPoint Spokane
+AS_30500_Wolfpaw Services
+AS_3130_RGnet
+AS_3130_RGnet
+AS_31638_Lepida AS31638
+AS_31800_DALnet IRC Network
+AS_31857_Ptera
+AS_31857_Ptera
+AS_32035_Telekenex Inc
+AS_32097_Wholesale Internet, Inc.
+AS_32133_Ting Fiber (Backbone)
+AS_32204_KPU Telecom
+AS_32212_Sky Fiber Internet
+AS_32233_Eastlink (Western)
+AS_32354_Unwired
+AS_32444_Safelink Internet [AS32444]
+AS_32494_Online Technology Exchange
+AS_32590_Valve Corporation
+AS_32590_Valve Corporation
+AS_32621_Minnesota VoIP
+AS_32751_Nuclearfallout Enterprises, Inc.
+AS_32869_Silver Star Telecom
+AS_32934_Facebook Inc
+AS_32934_Facebook Inc
+AS_33011_Box
+AS_3303_Swisscom
+AS_33108_SIX Seattle Route Servers
+AS_33108_SIX Seattle Route Servers
+AS_33211_RisingNet.com
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33362_Wikstrom Telephone Company
+AS_33438_StackPath (Highwinds)
+AS_33438_StackPath (Highwinds)
+AS_33517_Dynamic Network Services, Inc.
+AS_3361_Digital Fortress Inc.
+AS_3401_City of Seattle - IIT
+AS_34553_Nathan Sales
+AS_3491_PCCW Global
+AS_35280_ACORUS NETWORKS
+AS_35990_Gigoli Internet
+AS_36012_Hunter Communications
+AS_3601_Mouat's Technology Services, Inc.
+AS_36222_WindWave Communications
+AS_36236_NetActuate
+AS_36263_Forona Technologies, Inc.
+AS_36351_SoftLayer Technologies, Inc. (an IBM Company)
+AS_36369_Limewave Communications Inc.
+AS_36374_Stellar Association
+AS_36416_Clackamas ESD
+AS_36459_GitHub, Inc.
+AS_36459_GitHub, Inc.
+AS_36584_Archeo Futurus
+AS_36692_Cisco Umbrella
+AS_36817_MCSnet
+AS_3701_NERO Network
+AS_3742_Semaphore Corporation
+AS_38001_NewMedia Express Pte Ltd
+AS_38022_REANNZ
+AS_38136_Akari Networks
+AS_3842_RamNode
+AS_3853_Whidbey Telephone Company
+AS_3853_Whidbey Telephone Company
+AS_3856_Packet Clearing House
+AS_393350_TELTRUST
+AS_393552_Longmont Power & Communications
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_393950_Xiber LLC
+AS_394018_ARIN-PFS-SEA
+AS_394065_essensys Inc.
+AS_394073_Bungie
+AS_394140_Native Network
+AS_394330_LTD Broadband
+AS_394449_FYBERCOM
+AS_394449_FYBERCOM
+AS_394514_Car Toys, Inc.
+AS_394581_BLUESPAN
+AS_395466_Global Net
+AS_395478_Rocky Mountain Internet Inc
+AS_395823_doof.net
+AS_396040_Inland Cellular
+AS_396253_iboss Americas
+AS_396278_ConnectedAF
+AS_396388_Woofy
+AS_396507_Emerald Onion
+AS_396914_Pacific Northwest Net
+AS_397326_South Front Networks
+AS_397849_Zoho Corp
+AS_398223_Pomona Consulting
+AS_398491_Hyper Expert
+AS_398960_Cryoflesh
+AS_40029_Novus Entertainment Inc.
+AS_40065_CNSERVERS
+AS_4043_Montana Internet Corporation
+AS_40475_Applied Operations
+AS_40495_Marchex, Inc
+AS_40627_RingCentral
+AS_40752_TVG Network
+AS_40805_JMF Solutions, Inc
+AS_40861_Paradise Networks
+AS_41095_IPTP Networks
+AS_41378_Kirino
+AS_4150_SupraNet Communications
+AS_41717_TelflyNetwork
+AS_4181_TDS Telecom
+AS_4258_ATGBB
+AS_4258_ATGBB
+AS_42_Packet Clearing House AS42
+AS_43996_Booking.com
+AS_4455_BSO
+AS_4474_TCT West, Inc.
+AS_4474_TCT West, Inc.
+AS_46131_TheIPGuys.Net
+AS_46276_SmarterBroadband
+AS_46416_BankOnIT
+AS_46435_Idaho Regional Optical Network
+AS_46489_Twitch
+AS_46489_Twitch
+AS_46562_Performive
+AS_46997_Nato Internet Service
+AS_47065_Columbia/UFMG PEERING Research Testbed
+AS_47096_Compudyne, Inc.
+AS_4766_KT Corporation (Korea Telecom)
+AS_4775_Globe Telecom
+AS_48024_NEROCLOUD
+AS_49544_i3D.net
+AS_50245_Serverel
+AS_50763_MCKAYCOM LTD
+AS_53334_Total Uptime Technologies
+AS_53340_Fiberhub
+AS_53597_Hoyos Consulting
+AS_53708_iovation, Inc. 2
+AS_53828_Nitel
+AS_53837_ServedBy the Net
+AS_53869_Surescripts Enterprise Services
+AS_54113_Fastly, Inc.
+AS_54113_Fastly, Inc.
+AS_54182_Axia Connect Ltd.
+AS_54290_Hostwinds
+AS_54290_Hostwinds
+AS_54327_Montana West LLC
+AS_54506_Pineapple Hospitality Company
+AS_54523_Warm Springs Telecom
+AS_54527_Astute Hosting
+AS_54994_Quantil Networks
+AS_55002_Defense.Net
+AS_55039_Fatbeam
+AS_55044_LR Communications, Inc.
+AS_55193_NGL Connection
+AS_55256_Netskope
+AS_55818_Matrix Cable Internet Exchange (MCIX)
+AS_55850_Trustpower NZ Ltd
+AS_5645_TekSavvy Solutions Inc.
+AS_5650_Frontier Communications of America (FCA)
+AS_57695_Misaka Network, Inc.
+AS_577_Bell Canada Backbone
+AS_57976_Blizzard Entertainment
+AS_58453_China Mobile International
+AS_58511_Anycast Global Backbone
+AS_58580_Fastrack Technology
+AS_59947_LL-IX Route Servers
+AS_6233_xTom
+AS_62597_NSONE
+AS_62642_Bigleaf Networks, Inc.
+AS_62708_ClaimLynx, Inc
+AS_62715_Code42 Software, Inc.
+AS_62715_Code42 Software, Inc.
+AS_62838_Reprise Hosting
+AS_62856_Docusign Inc
+AS_62887_Whitesky Communications AS62887
+AS_62955_eBay
+AS_6295_Lunavi, Inc.
+AS_6295_Lunavi, Inc.
+AS_63023_GTHost US
+AS_63069_Sureline Telecom
+AS_6315_XMission
+AS_6327_Shaw Cablesystems
+AS_63298_Fatbeam-S.Idaho
+AS_6391_Urban Networks Inc
+AS_63927_RISE.ph
+AS_64227_CONSOLIDATED TELEPHONE AS 64227
+AS_64241_Wobscale Technologies
+AS_6456_Altopia Corporation
+AS_6456_Altopia Corporation
+AS_6461_Zayo (Abovenet Communications Inc.)
+AS_6507_Riot Games
+AS_6509_CANARIE Inc
+AS_668_DREN
+AS_6774_BICS
+AS_6939_Hurricane Electric
+AS_7029_Windstream Communications
+AS_7155_ViaSat
+AS_7311_Frontier Networks
+AS_7342_Verisign
+AS_7385_Electric Lightwave
+AS_7575_AARNet
+AS_7713_Telekomunikasi Indonesia Int (TELIN)
+AS_7752_Threshold Communications
+AS_7752_Threshold Communications
+AS_7782_Alaska Communications Systems Group, Inc.
+AS_803_Saskatchewan Telecommunications
+AS_803_Saskatchewan Telecommunications
+AS_8047_General Communications Incorp
+AS_8047_General Communications Incorp
+AS_8057_Vision Net AS8057
+AS_8075_Microsoft
+AS_8075_Microsoft
+AS_8220_Colt
+AS_8309_Sipartech
+AS_8674_Netnod
+AS_9002_RETN
+AS_9246_GTA/Teleguam Holdings, LLC
+AS_9299_Philippine Long Distance Company
+AS_9318_SK Broadband
+AS_9370_SAKURA internet
+
+IX: Equinix Chicago   Peering's : 281
+AS_10242_US Internet
+AS_10310_Yahoo!
+AS_10310_Yahoo!
+AS_10423_STELLAR Broadband
+AS_11062_MTCO-COMMUNICATIONS
+AS_11114_Wintek Corporation
+AS_11142_Precision Data Solutions, LLC (PDS Connect)
+AS_11164_Internet2 I2PX
+AS_11232_Midcontinent Communications
+AS_11260_Eastlink
+AS_11272_C Spire Fiber
+AS_11377_SendGrid
+AS_11377_SendGrid
+AS_11550_Smithville Digital
+AS_11666_Nexicom Inc.
+AS_11686_Education Networks of America, Inc.
+AS_11796_Airstream Communications
+AS_11796_Airstream Communications
+AS_11870_ALTICOR
+AS_11979_Bluegrass Network
+AS_12033_Adams TelSystems, Inc.
+AS_12083_WOW!
+AS_12129_123.net AS12129
+AS_12189_PhoenixNAP
+AS_12200_Rackspace
+AS_12265_R2G Services LLC (12265)
+AS_1239_Sprint
+AS_132203_Tencent Global
+AS_13335_Cloudflare
+AS_13414_Twitter, Inc.
+AS_13428_Surf Air Wireless AS13428
+AS_13445_WebEx Communications
+AS_13536_FirstLight Fiber
+AS_13680_HGTN.net
+AS_13727_Next Dimension
+AS_13768_Aptum Technologies
+AS_13786_Seaborn
+AS_13807_Great Plains Communications LLC AS13807
+AS_13855_Cedar Falls Utilities
+AS_14340_Salesforce.com
+AS_14363_MTC Communications
+AS_14413_Linkedin
+AS_14525_Stellar Technologies Inc.
+AS_14537_Continent 8 Technologies plc
+AS_14586_Nuclearfallout Enterprises ASN 14586
+AS_14609_Equinix Corporate Network - NAMER
+AS_14630_Invesco Group Services, Inc.
+AS_14630_Invesco Group Services, Inc.
+AS_14793_API Digital
+AS_14907_Wikimedia Foundation
+AS_14928_Adams CATV, Inc.
+AS_15092_Star2Star Communications
+AS_15133_Verizon Digital Media Services (EdgeCast Networks)
+AS_15133_Verizon Digital Media Services (EdgeCast Networks)
+AS_15169_Google LLC
+AS_15169_Google LLC
+AS_15305_Syringa Networks
+AS_15412_Global Cloud Xchange (f.k.a. FLAG Telecom)
+AS_1547_JSC InterDnestrCom (IDC)
+AS_15695_Expereo International bv
+AS_16276_OVHcloud
+AS_1640_Thacker-Grigsby Communications
+AS_16509_Amazon.com
+AS_16509_Amazon.com
+AS_16552_Tiggee
+AS_16586_Clearwire
+AS_16591_Google Fiber, Inc.
+AS_17054_Expedient
+AS_17117_RITSNET
+AS_17143_Winn Telecom
+AS_17246_RCI Communications, Inc
+AS_17253_TEC of Jackson, Inc.
+AS_17306_Rise Broadband
+AS_17306_Rise Broadband
+AS_17350_Moody's
+AS_17350_Moody's
+AS_1828_Unitas Global
+AS_18596_Madison Communications, Inc.
+AS_18683_Midwest Fiber Networks
+AS_19008_Perry-Spencer Communications
+AS_19016_Westman Communications Group
+AS_19108_Suddenlink Communications
+AS_19151_365 Data Centers (BroadbandONE)
+AS_19310_Casair
+AS_19551_Imperva
+AS_19653_CTS Communications Corp.
+AS_19679_Dropbox
+AS_19754_The Fusion Network
+AS_19834_Conversant US Central
+AS_19834_Conversant US Central
+AS_19930_Equinix Connect - CH, Chicago
+AS_19930_Equinix Connect - CH, Chicago
+AS_199524_G-Core Labs
+AS_20021_Ntirety
+AS_20115_Charter Communications
+AS_20340_AppiaCommunications
+AS_20473_The Constant Company, LLC
+AS_20940_Akamai Technologies
+AS_21804_Access Communications Co-operative
+AS_21808_PRLSS
+AS_21859_Zenlayer Inc
+AS_21928_T-Mobile USA
+AS_21949_Beanfield Technologies
+AS_22438_Clear Rate Communications
+AS_22616_Zscaler AS22616
+AS_22616_Zscaler AS22616
+AS_22697_ROBLOX
+AS_22697_ROBLOX
+AS_22822_Limelight Networks Global
+AS_22995_Xplornet Communications Inc.
+AS_23367_Genesis Adaptive
+AS_23393_NuCDN
+AS_23404_Ritter Communications
+AS_23467_New Relic
+AS_23467_New Relic
+AS_23473_Pavlov Media INC.
+AS_237_Merit Network
+AS_2381_WiscNet
+AS_24115_Equinix Internet Exchange - MLPE
+AS_24115_Equinix Internet Exchange - MLPE
+AS_24482_SG.GS
+AS_25885_OPAQ Networks
+AS_2603_NORDUnet
+AS_26068_OnShore, Inc.
+AS_26133_Frankfort Plant Board
+AS_262287_Maxihost LTDA
+AS_2635_Automattic
+AS_26554_US Signal
+AS_26744_Planters Rural Telephone Cooperative
+AS_26838_Magna International
+AS_26989_H&R Block
+AS_27202_City of Bardstown
+AS_27216_Air Advantage LLC
+AS_27630_Xfernet
+AS_2906_Netflix
+AS_2906_Netflix
+AS_2914_NTT Global IP Network
+AS_293_Energy Sciences Network (ESnet)
+AS_29791_Internap
+AS_29838_Atlantic Metro
+AS_30081_CacheFly
+AS_30517_Everstream Solutions LLC
+AS_30600_Cinergy  Metronet
+AS_30600_Cinergy  Metronet
+AS_32035_Telekenex Inc
+AS_32067_Thomson Reuters U.S.
+AS_32160_Computer Techniques, Inc.
+AS_32181_GigeNET
+AS_32233_Eastlink (Western)
+AS_32244_Liquid Web
+AS_32590_Valve Corporation
+AS_32703_Intelligent Fiber Network
+AS_32709_Joink LLC
+AS_32748_Steadfast Networks
+AS_32787_Akamai Prolexic DDoS Mitigation
+AS_32934_Facebook Inc
+AS_32934_Facebook Inc
+AS_33011_Box
+AS_3303_Swisscom
+AS_33071_ISC F-ROOT ORD1
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33438_StackPath (Highwinds)
+AS_33438_StackPath (Highwinds)
+AS_33616_Co-Mo Comm, Inc.
+AS_33725_SITCO
+AS_3465_JBHUNT
+AS_36001_Bertram Communications
+AS_36184_Madison Tyler, LLC
+AS_36280_Indatel
+AS_36351_SoftLayer Technologies, Inc. (an IBM Company)
+AS_36692_Cisco Umbrella
+AS_3737_PenTeleData
+AS_3856_Packet Clearing House
+AS_393713_All Points Broadband
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_393891_Nutrien
+AS_393950_Xiber LLC
+AS_394111_Foothills Rural Telephone Cooperative Corporation, Inc.
+AS_394749_Equinix Solution Validation Center
+AS_395470_Xaptum Corporation
+AS_395570_FibreStream
+AS_396238_FairlawnGig.net
+AS_396253_iboss Americas
+AS_396253_iboss Americas
+AS_396960_TransCanada Pipelines AS396960
+AS_396986_ByteDance AS396986
+AS_398143_Truestream
+AS_40627_RingCentral
+AS_40676_Psychz Networks
+AS_40752_TVG Network
+AS_40788_Start.ca
+AS_41095_IPTP Networks
+AS_4150_SupraNet Communications
+AS_4181_TDS Telecom
+AS_42_Packet Clearing House AS42
+AS_44444_Forcepoint Cloud
+AS_4581_Socket Telecom, LLC
+AS_46450_Pilot Fiber, Inc.
+AS_46489_Twitch
+AS_46489_Twitch
+AS_46562_Performive
+AS_46632_Southwest Arkansas Telephone Coop
+AS_46811_SilverIP Communications
+AS_46873_Host Color
+AS_47095_Murray Electric System
+AS_4775_Globe Telecom
+AS_4826_Vocus Communications
+AS_4927_Impulse Internet Services
+AS_49544_i3D.net
+AS_53597_Hoyos Consulting
+AS_53610_Metro Communications Company, Inc.
+AS_53766_VeloCloud Networks
+AS_53828_Nitel
+AS_54035_DAVEY-HOLDINGS-LLC
+AS_54113_Fastly, Inc.
+AS_54113_Fastly, Inc.
+AS_54376_Lynx Network Group
+AS_54825_Equinix Metal
+AS_54825_Equinix Metal
+AS_54827_Huntington Bancshares
+AS_54827_Huntington Bancshares
+AS_54994_Quantil Networks
+AS_55219_Cisco Systems, Inc. - Talos
+AS_55219_Cisco Systems, Inc. - Talos
+AS_55247_IVALUA
+AS_5645_TekSavvy Solutions Inc.
+AS_5650_Frontier Communications of America (FCA)
+AS_5769_Videotron AS5769
+AS_577_Bell Canada Backbone
+AS_57976_Blizzard Entertainment
+AS_600_OARnet
+AS_6079_RCN
+AS_6122_Iowa Communications Network
+AS_6128_Cablevision Systems Corporation
+AS_6128_Cablevision Systems Corporation
+AS_6181_Cincinnati Bell Telephone
+AS_62642_Bigleaf Networks, Inc.
+AS_62856_Docusign Inc
+AS_62856_Docusign Inc
+AS_62887_Whitesky Communications AS62887
+AS_62955_eBay
+AS_63242_LightSpeed Communications
+AS_6325_Illinois Century Network
+AS_6327_Shaw Cablesystems
+AS_63399_Dialpad
+AS_63440_Telnyx LLC
+AS_63440_Telnyx LLC
+AS_6368_Northwestern Indiana Telephone Co.
+AS_64096_Internet Harbor
+AS_64208_Virtustream
+AS_64255_Ellie Mae East
+AS_6447_RouteViews
+AS_6461_Zayo (Abovenet Communications Inc.)
+AS_6507_Riot Games
+AS_6614_U.S. Cellular
+AS_6614_U.S. Cellular
+AS_668_DREN
+AS_6939_Hurricane Electric
+AS_7029_Windstream Communications
+AS_7057_Managed Network Systems Inc.
+AS_714_Apple Inc.
+AS_714_Apple Inc.
+AS_7332_LightBound
+AS_7342_Verisign
+AS_7772_Schneider Electric US
+AS_7795_LUMOS Networks, Inc.
+AS_7829_Telepacific Wireless , Inc. (formerly Covad Wireless).
+AS_7843_Charter Communications (7843)
+AS_803_Saskatchewan Telecommunications
+AS_8047_General Communications Incorp
+AS_8047_General Communications Incorp
+AS_8075_Microsoft
+AS_8075_Microsoft
+AS_812_Rogers Cable
+AS_8220_Colt
+AS_855_Bell Aliant Inc.
+AS_8560_1&1 IONOS
+AS_9505_TWGate
+
+IX: DE-CIX New York   Peering's : 258
+AS_10310_Yahoo!
+AS_10310_Yahoo!
+AS_10466_MAGPI
+AS_11164_Internet2 I2PX
+AS_11260_Eastlink
+AS_11260_Eastlink
+AS_11269_LinkBermuda
+AS_112_DNS-OARC-112
+AS_11383_TierPoint - Hawthorne NY USA
+AS_11399_Williams College
+AS_11403_NYI
+AS_11708_KCFiber
+AS_11845_Vox Telecom
+AS_12196_Etsy
+AS_12470_GLOBE Development GmbH
+AS_12748_IAV
+AS_12883_Ucomline LTD
+AS_13030_Init7
+AS_13132_cyberways GmbH
+AS_13213_UK2Group
+AS_13335_Cloudflare
+AS_1351_The University of Vermont
+AS_13536_FirstLight Fiber
+AS_13768_Aptum Technologies
+AS_13786_Seaborn
+AS_14061_DigitalOcean
+AS_14325_OSHEAN, Inc
+AS_14340_Salesforce.com
+AS_14361_HopOne Internet Corp.
+AS_14537_Continent 8 Technologies plc
+AS_14928_Adams CATV, Inc.
+AS_14969_Jane Street
+AS_14969_Jane Street
+AS_15133_Verizon Digital Media Services (EdgeCast Networks)
+AS_15169_Google LLC
+AS_15169_Google LLC
+AS_16164_Sohonet Ltd
+AS_16276_OVHcloud
+AS_16509_Amazon.com
+AS_16509_Amazon.com
+AS_16524_MetTel
+AS_16552_Tiggee
+AS_16591_Google Fiber, Inc.
+AS_17113_TierPoint Boston
+AS_17185_Quonix Networks
+AS_17378_TierPoint 17378
+AS_18001_Dialog Axiata PLC
+AS_1820_Wnet Telecom USA
+AS_1828_Unitas Global
+AS_18616_Natural Wireless
+AS_18966_Aurora Solutions
+AS_19082_Everest Broadband
+AS_19318_InterServer
+AS_19515_Oricom Internet inc.
+AS_196610_DE-CIX Academy Educational Network
+AS_19689_MST Acquisition Group, LLC.
+AS_19711_Swaziland PTC
+AS_199524_G-Core Labs
+AS_199610_marbis
+AS_19969_Joe's Datacenter
+AS_20278_Nexeon Technologies
+AS_20459_Telecom Namibia
+AS_205811_Supply Frame AS205811
+AS_20764_RASCOM
+AS_20940_Akamai Technologies
+AS_21385_Trusted Network
+AS_21719_CHL
+AS_21949_Beanfield Technologies
+AS_21976_NJEDge.Net
+AS_22356_Durand do Brasil
+AS_22381_Megatelecom Telecomunicacoes
+AS_22418_ColoGuard Networks
+AS_22652_Fibrenoire
+AS_22691_ISPnet, Inc.
+AS_22697_ROBLOX
+AS_22697_ROBLOX
+AS_22742_Connecticut Education Network
+AS_22822_Limelight Networks Global
+AS_23393_NuCDN
+AS_23470_ReliableSite.Net
+AS_23473_Pavlov Media INC.
+AS_24482_SG.GS
+AS_25091_IP-Max SA
+AS_25180_Exponential-e Ltd
+AS_25818_CMC Networks
+AS_25885_OPAQ Networks
+AS_25933_Vogel Telecom
+AS_26163_Datagram
+AS_262372_KNET PROVEDOR
+AS_262589_InterNexa Global Network
+AS_263073_DTEL
+AS_263237_PowerHost Chile
+AS_263421_NR Conexoes que fortalecem
+AS_263444_Open X Tecnologia Ltda
+AS_263541_IMF Network
+AS_2635_Automattic
+AS_265347_BITAL INTERNET
+AS_266925_UPIX NETWORKS
+AS_267056_EVEREST RIDGE CONSULTORIA EM REDES DE COM
+AS_267613_ELETRONET
+AS_26801_Zito Media
+AS_269194_STAR1 INTERNET
+AS_27257_Webair
+AS_2734_CoreSite IP
+AS_27611_Starry - NY
+AS_28007_Gold Data
+AS_28126_Brisanet Servicos de Telecomunicacoes
+AS_28186_ITS Telecomunicações
+AS_28202_Rede Brasileira de Comunicacao
+AS_28338_NB Telecom
+AS_28598_Mob Servicos de Telecomunicacoes Ltda
+AS_28634_Life Telecom
+AS_28663_Flys Interativa AS28663
+AS_2906_Netflix
+AS_2906_Netflix
+AS_29632_NetAssist
+AS_29791_Internap
+AS_29802_Hivelocity INC
+AS_29838_Atlantic Metro
+AS_29852_Honest Networks
+AS_29990_AppNexus, Inc.
+AS_29990_AppNexus, Inc.
+AS_30081_CacheFly
+AS_30511_ISC F-ROOT LGA2
+AS_30889_Waycom International
+AS_31133_MegaFon
+AS_31769_Rainbow Broadband, Inc.
+AS_31950_Data Network Solutions
+AS_32035_Telekenex Inc
+AS_32097_Wholesale Internet, Inc.
+AS_32217_GPIEX INC
+AS_32217_GPIEX INC
+AS_32261_Subspace
+AS_32425_Pixel Factory Data Center
+AS_3292_TDC A/S
+AS_32934_Facebook Inc
+AS_32934_Facebook Inc
+AS_3303_Swisscom
+AS_33247_Coastal Telco Services
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33353_Sony Interactive Entertainment (PlayStation)
+AS_33438_StackPath (Highwinds)
+AS_33570_Cloudpath
+AS_33891_Core-Backbone
+AS_34549_meerfarbig
+AS_34854_Staclar Carrier
+AS_35280_ACORUS NETWORKS
+AS_35313_Infonas WLL
+AS_3580_Planet Access Networks
+AS_35838_CCANET Ltd
+AS_36062_DoubleVerify
+AS_36062_DoubleVerify
+AS_36086_Digital Realty United States
+AS_3630_NYSERNet-COM
+AS_36351_SoftLayer Technologies, Inc. (an IBM Company)
+AS_37468_Angola Cables
+AS_37721_Virtual Technologies & Solutions
+AS_38016_Nokia IP/Optical Networks Labs
+AS_3856_Packet Clearing House
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_39386_Saudi Telecom Company (STC IGW)
+AS_394102_NetFire
+AS_39533_Asympto Networks
+AS_395853_NYCMesh
+AS_396356_Maxihost
+AS_398042_RTE Group
+AS_398131_PowerHost Datacenter USA
+AS_398465_Rackdog
+AS_398930_Eastern Time WiNet
+AS_39912_oja.at
+AS_40545_Empire Access
+AS_40630_GridFury
+AS_40773_FRANTIC-LLC
+AS_40805_JMF Solutions, Inc
+AS_41095_IPTP Networks
+AS_41327_Fiber Telecom S.p.A. AS41327
+AS_4134_China Telecom
+AS_41690_Dailymotion
+AS_4230_Claro S.A.
+AS_42473_Anexia
+AS_4258_ATGBB
+AS_42_Packet Clearing House AS42
+AS_43531_IX Reach
+AS_4385_Rochester Institute of Technology
+AS_43996_Booking.com
+AS_44053_Unilink-telecom
+AS_44356_Epsilon
+AS_44444_Forcepoint Cloud
+AS_4455_BSO
+AS_45489_Sri Lanka Telecom Global
+AS_4556_PacketFabric
+AS_46155_Deerfield Academy
+AS_46450_Pilot Fiber, Inc.
+AS_46450_Pilot Fiber, Inc.
+AS_46_Rutgers University
+AS_49544_i3D.net
+AS_50304_Blix Solutions AS
+AS_50629_LWLcom
+AS_51531_DE-CIX Services
+AS_51531_DE-CIX Services
+AS_51865_DIDWW Ireland
+AS_52320_GlobeNet
+AS_52777_BR27 Serviços de Tecnologia Ltda
+AS_53264_SBA Edge, LLC
+AS_54113_Fastly, Inc.
+AS_54113_Fastly, Inc.
+AS_54825_Equinix Metal
+AS_55256_Netskope
+AS_55805_MobiCom Corporation
+AS_5769_Videotron AS5769
+AS_57976_Blizzard Entertainment
+AS_59796_StormWall
+AS_59865_iVent Mobile
+AS_6079_RCN
+AS_61438_ip-it consult GmbH
+AS_61573_Grupo IP - IP Telecom
+AS_61599_Eaí Telecomunicações LTDA
+AS_61817_Halley Telecom Comercio & Serviço
+AS_61832_Fortel Fortaleza Telecomunicacoes
+AS_62240_Clouvider
+AS_6233_xTom
+AS_62668_Optical Communications Group
+AS_62955_eBay
+AS_63034_DE-CIX New York Route Servers
+AS_63034_DE-CIX New York Route Servers
+AS_6327_Shaw Cablesystems
+AS_63290_QCSTelecom
+AS_63290_QCSTelecom
+AS_63311_20C
+AS_63399_Dialpad
+AS_63949_Linode AS63949
+AS_64049_Reliance Jio Infocomm Singapore
+AS_64049_Reliance Jio Infocomm Singapore
+AS_6461_Zayo (Abovenet Communications Inc.)
+AS_6677_Siminn
+AS_6774_BICS
+AS_6908_Six Degrees - Datahop
+AS_6939_Hurricane Electric
+AS_7029_Windstream Communications
+AS_714_Apple Inc.
+AS_714_Apple Inc.
+AS_7155_ViaSat
+AS_7195_EdgeUno
+AS_7381_Sungard Availability Services (North America)
+AS_7849_Crocker Communications, Inc
+AS_8001_Cologix
+AS_8002_Stealth Communications
+AS_8075_Microsoft
+AS_8075_Microsoft
+AS_8262_EVOLINK AD
+AS_8309_Sipartech
+AS_8359_Mobile TeleSystems PJSC
+AS_8966_Emirates Telecommunications Corporation (Etisalat)
+AS_9009_M247
+AS_9009_M247
+AS_9119_Softnet
+AS_9304_HGC
+AS_9498_Bharti Airtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The additional information for IXs where the ASN has more connections: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SIX Seattle : #number of connections  2
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The additional information for peering's with more than one connection points:: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AS_33438_StackPath (Highwinds) : #number of connections  5
+AS_26801_Zito Media : #number of connections  2
+AS_18888_Zillow Group : #number of connections  2
+AS_22995_Xplornet Communications Inc. : #number of connections  2
+AS_33353_Sony Interactive Entertainment (PlayStation) : #number of connections  7
+AS_19969_Joe's Datacenter : #number of connections  2
+AS_6079_RCN : #number of connections  2
+AS_393950_Xiber LLC : #number of connections  2
+AS_3853_Whidbey Telephone Company : #number of connections  2
+AS_3130_RGnet : #number of connections  2
+AS_7029_Windstream Communications : #number of connections  3
+AS_62642_Bigleaf Networks, Inc. : #number of connections  2
+AS_15169_Google LLC : #number of connections  6
+AS_19930_Equinix Connect - CH, Chicago : #number of connections  2
+AS_11090_Matanuska Telephone Association : #number of connections  2
+AS_26935_Wholesail Networks - legacy Noel : #number of connections  2
+AS_16591_Google Fiber, Inc. : #number of connections  2
+AS_6295_Lunavi, Inc. : #number of connections  2
+AS_13331_Metapeer : #number of connections  2
+AS_7752_Threshold Communications : #number of connections  2
+AS_35280_ACORUS NETWORKS : #number of connections  2
+AS_13536_FirstLight Fiber : #number of connections  2
+AS_14340_Salesforce.com : #number of connections  3
+AS_11686_Education Networks of America, Inc. : #number of connections  2
+AS_29990_AppNexus, Inc. : #number of connections  2
+AS_63034_DE-CIX New York Route Servers : #number of connections  2
+AS_16164_Sohonet Ltd : #number of connections  2
+AS_15305_Syringa Networks : #number of connections  2
+AS_2544_King County I-NET : #number of connections  2
+AS_6939_Hurricane Electric : #number of connections  3
+AS_41095_IPTP Networks : #number of connections  3
+AS_62856_Docusign Inc : #number of connections  3
+AS_24115_Equinix Internet Exchange - MLPE : #number of connections  2
+AS_62715_Code42 Software, Inc. : #number of connections  2
+AS_11164_Internet2 I2PX : #number of connections  3
+AS_13335_Cloudflare : #number of connections  3
+AS_101_Pacific Northwest Gigapop : #number of connections  2
+AS_11708_KCFiber : #number of connections  2
+AS_30600_Cinergy  Metronet : #number of connections  2
+AS_63290_QCSTelecom : #number of connections  2
+AS_3856_Packet Clearing House : #number of connections  3
+AS_16713_NoaNet : #number of connections  2
+AS_17306_Rise Broadband : #number of connections  2
+AS_19834_Conversant US Central : #number of connections  2
+AS_6233_xTom : #number of connections  2
+AS_13786_Seaborn : #number of connections  2
+AS_39386_Saudi Telecom Company (STC IGW) : #number of connections  6
+AS_24482_SG.GS : #number of connections  3
+AS_9009_M247 : #number of connections  2
+AS_6128_Cablevision Systems Corporation : #number of connections  2
+AS_14361_HopOne Internet Corp. : #number of connections  2
+AS_43996_Booking.com : #number of connections  2
+AS_4775_Globe Telecom : #number of connections  2
+AS_1828_Unitas Global : #number of connections  3
+AS_20473_The Constant Company, LLC : #number of connections  2
+AS_6614_U.S. Cellular : #number of connections  2
+AS_4474_TCT West, Inc. : #number of connections  2
+AS_46489_Twitch : #number of connections  4
+AS_23175_PogoZone : #number of connections  2
+AS_21804_Access Communications Co-operative : #number of connections  2
+AS_4181_TDS Telecom : #number of connections  2
+AS_23473_Pavlov Media INC. : #number of connections  3
+AS_15133_Verizon Digital Media Services (EdgeCast Networks) : #number of connections  5
+AS_11796_Airstream Communications : #number of connections  3
+AS_11260_Eastlink : #number of connections  3
+AS_6456_Altopia Corporation : #number of connections  2
+AS_16552_Tiggee : #number of connections  3
+AS_20115_Charter Communications : #number of connections  2
+AS_5645_TekSavvy Solutions Inc. : #number of connections  2
+AS_44444_Forcepoint Cloud : #number of connections  2
+AS_19551_Imperva : #number of connections  2
+AS_63440_Telnyx LLC : #number of connections  2
+AS_54290_Hostwinds : #number of connections  2
+AS_32035_Telekenex Inc : #number of connections  3
+AS_36062_DoubleVerify : #number of connections  2
+AS_25885_OPAQ Networks : #number of connections  2
+AS_55219_Cisco Systems, Inc. - Talos : #number of connections  2
+AS_54113_Fastly, Inc. : #number of connections  6
+AS_57976_Blizzard Entertainment : #number of connections  3
+AS_32217_GPIEX INC : #number of connections  2
+AS_6327_Shaw Cablesystems : #number of connections  3
+AS_19679_Dropbox : #number of connections  2
+AS_19518_Rock Island Technology Solutions : #number of connections  2
+AS_293_Energy Sciences Network (ESnet) : #number of connections  2
+AS_36351_SoftLayer Technologies, Inc. (an IBM Company) : #number of connections  3
+AS_19016_Westman Communications Group : #number of connections  2
+AS_21859_Zenlayer Inc : #number of connections  2
+AS_16276_OVHcloud : #number of connections  3
+AS_394449_FYBERCOM : #number of connections  2
+AS_577_Bell Canada Backbone : #number of connections  2
+AS_21949_Beanfield Technologies : #number of connections  3
+AS_40627_RingCentral : #number of connections  2
+AS_5650_Frontier Communications of America (FCA) : #number of connections  2
+AS_54827_Huntington Bancshares : #number of connections  2
+AS_8220_Colt : #number of connections  2
+AS_33011_Box : #number of connections  2
+AS_30081_CacheFly : #number of connections  3
+AS_40805_JMF Solutions, Inc : #number of connections  2
+AS_62887_Whitesky Communications AS62887 : #number of connections  2
+AS_63399_Dialpad : #number of connections  2
+AS_14928_Adams CATV, Inc. : #number of connections  2
+AS_21947_Blackfoot Communications Inc : #number of connections  2
+AS_19754_The Fusion Network : #number of connections  2
+AS_13370_LocalTel Communications : #number of connections  2
+AS_23467_New Relic : #number of connections  2
+AS_10310_Yahoo! : #number of connections  6
+AS_53597_Hoyos Consulting : #number of connections  2
+AS_32233_Eastlink (Western) : #number of connections  2
+AS_29802_Hivelocity INC : #number of connections  2
+AS_54994_Quantil Networks : #number of connections  2
+AS_3303_Swisscom : #number of connections  3
+AS_23138_First Step Internet : #number of connections  2
+AS_6774_BICS : #number of connections  2
+AS_132203_Tencent Global : #number of connections  3
+AS_7342_Verisign : #number of connections  2
+AS_12189_PhoenixNAP : #number of connections  2
+AS_23393_NuCDN : #number of connections  3
+AS_29791_Internap : #number of connections  3
+AS_31857_Ptera : #number of connections  2
+AS_11377_SendGrid : #number of connections  2
+AS_32097_Wholesale Internet, Inc. : #number of connections  2
+AS_2635_Automattic : #number of connections  3
+AS_4150_SupraNet Communications : #number of connections  2
+AS_10242_US Internet : #number of connections  2
+AS_14969_Jane Street : #number of connections  2
+AS_36459_GitHub, Inc. : #number of connections  2
+AS_7155_ViaSat : #number of connections  2
+AS_14630_Invesco Group Services, Inc. : #number of connections  2
+AS_17350_Moody's : #number of connections  3
+AS_53828_Nitel : #number of connections  2
+AS_36692_Cisco Umbrella : #number of connections  2
+AS_803_Saskatchewan Telecommunications : #number of connections  3
+AS_714_Apple Inc. : #number of connections  4
+AS_62955_eBay : #number of connections  3
+AS_6461_Zayo (Abovenet Communications Inc.) : #number of connections  3
+AS_396253_iboss Americas : #number of connections  3
+AS_14537_Continent 8 Technologies plc : #number of connections  2
+AS_22697_ROBLOX : #number of connections  6
+AS_32934_Facebook Inc : #number of connections  6
+AS_8075_Microsoft : #number of connections  6
+AS_5769_Videotron AS5769 : #number of connections  2
+AS_4258_ATGBB : #number of connections  3
+AS_16509_Amazon.com : #number of connections  6
+AS_15695_Expereo International bv : #number of connections  2
+AS_46450_Pilot Fiber, Inc. : #number of connections  3
+AS_6507_Riot Games : #number of connections  2
+AS_46562_Performive : #number of connections  2
+AS_29838_Atlantic Metro : #number of connections  3
+AS_40752_TVG Network : #number of connections  2
+AS_54825_Equinix Metal : #number of connections  3
+AS_42_Packet Clearing House AS42 : #number of connections  3
+AS_8047_General Communications Incorp : #number of connections  4
+AS_22616_Zscaler AS22616 : #number of connections  4
+AS_19653_CTS Communications Corp. : #number of connections  2
+AS_55256_Netskope : #number of connections  2
+AS_2906_Netflix : #number of connections  6
+AS_51531_DE-CIX Services : #number of connections  2
+AS_33108_SIX Seattle Route Servers : #number of connections  2
+AS_22822_Limelight Networks Global : #number of connections  4
+AS_20940_Akamai Technologies : #number of connections  3
+AS_64049_Reliance Jio Infocomm Singapore : #number of connections  2
+AS_27281_Quantcast : #number of connections  2
+AS_15177_StarTouch, Inc. : #number of connections  2
+AS_8309_Sipartech : #number of connections  2
+AS_4455_BSO : #number of connections  2
+AS_21928_T-Mobile USA : #number of connections  2
+AS_32590_Valve Corporation : #number of connections  3
+AS_668_DREN : #number of connections  2
+AS_13768_Aptum Technologies : #number of connections  3
+AS_49544_i3D.net : #number of connections  3
+AS_199524_G-Core Labs : #number of connections  2
+AS_13414_Twitter, Inc. : #number of connections  2
+Directory test_log already exists.
+Directory test_log already exists.
+
+
+
+Script execution took: 0:02:25
