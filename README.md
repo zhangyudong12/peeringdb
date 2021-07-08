@@ -2,7 +2,7 @@
 
 executable script
 
-peeringdb_ms.py - multi-threading version script, test script not applied
+peeringdb_ms.py - multi-threading and refactoring version script
 
 ## Usage
 
