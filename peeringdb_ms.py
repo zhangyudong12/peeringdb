@@ -19,19 +19,19 @@ apiurl = 'https://www.peeringdb.com/api/'
 # Comppatible for both python2 and python3
 def get_input(prompt=''):
     try:
-     line = raw_input(prompt)
+        line = raw_input(prompt)
     except NameError:
-     line = input(prompt)
+        line = input(prompt)
     return line
 
 
 def fetchResults(url):
     try:
-     response = requests.get(url)
-     response = json.loads(response.text)
+        response = requests.get(url)
+        response = json.loads(response.text)
     except:
-     print("Error: Didn't receive a valid response when calling %s" % url)
-     exit(1)
+        print("Error: Didn't receive a valid response when calling %s" % url)
+        exit(1)
     return response
 
 
