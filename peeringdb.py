@@ -8,6 +8,8 @@ import requests
 import json
 import ipaddress
 import sys
+import time
+from datetime import timedelta
 
 apiurl = 'https://www.peeringdb.com/api/'
 
@@ -40,6 +42,9 @@ def lookupNet(search):
 def getIX(search):
     url = "%snet?asn=%s&depth=2" % (apiurl, search)
     results = fetchResults(url)
+    if not results['data']:
+        print(f"AS{search} not found in PeeringDB")
+        exit(1)
     ix_speed = 0
     ix_list = []
     for key in sorted(results['data'][0]):
@@ -72,13 +77,15 @@ def findPeerings(search, asn):
     return net_list
 
 
-def print_report(title,input_dict,flag,input_lenth):
+def print_report(title,input_dict,flag):
+    print("\n")
     print('~' * 79)
     print(title)
     print('~' * 79)
     if flag == 'join':
         for key,value in input_dict.items():
-            print(f"IX: {key}   Peering's : {input_lenth}")
+            sub_total_peers = len(value)
+            print(f"\nIX: {key}   Peering's : {sub_total_peers}")
             print('\n'.join(value))
     else:
         for key,value in input_dict.items():
@@ -99,20 +106,20 @@ def main():
         f = open('script_cmd_output.txt', 'w')
         sys.stdout = f
 
+    start_time = time.time()
     asn_report = dict()
     ix_list_asn, total_agg_speed_m = getIX(asn)
     ix_set_asn = set(ix_list_asn)
     total_agg_speed = total_agg_speed_m/1000
     total_ix = len(ix_set_asn)
+    ix_set_asn_str = '\n'.join(ix_set_asn)
     print('~' * 79)
-    print(f"Network with ASN = {asn} exists in {total_ix} exchanging points \n")
-    print('\n'.join(ix_set_asn))
+    print(f"Network with ASN = {asn} exists in {total_ix} Public Exchange Points")
+    print(f"\nPublic IXs:\n{ix_set_asn_str}")
 
     all_peers = dict()
     for ix in ix_set_asn:
         all_peers[ix] = findPeerings(ix,asn)
-        sub_total_peers = len(all_peers[ix])
-        print_report("ASN Peering's List per IX :", all_peers, 'join', sub_total_peers)
 
     mergedlist = []
     for ix in all_peers:
@@ -122,10 +129,19 @@ def main():
     mergedset = set(mergedlist)
     total_organizations = len(mergedset)
     asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed,"Total_ix":total_ix,"Total_peers":total_peers,"Total_organizations":total_organizations}
-    print_report("ASN Network Executive Summary :", asn_report, 'na', 1)
+    print_report("ASN Network Executive Summary :", asn_report, 'na')
+    print_report("ASN Peering's List per Public IX :", all_peers, 'join')
 
+    print("\n\nThe additional information for IXs where the ASN has more connections: ")
+    print('~' * 79)
+    net_count = {net: ix_list_asn.count(net) for net in ix_set_asn}
+    for net, count in net_count.items():
+        if count > 1:
+            print(f"{net} : #number of network connections  {count}")
+        else:
+            continue
 
-    print("\n\nThe Additional information for peering's with more than one connection points: ")
+    print("\n\nThe additional information for peering's with more than one connection points: ")
     print('~' * 79)
     peer_count = {org: mergedlist.count(org) for org in mergedset}
     for peer, count in peer_count.items():
@@ -137,6 +153,10 @@ def main():
     export_file('asn_report.json', asn_report)
     export_file('ix_net_report.json', all_peers)
 
+    elapsed_time_secs = time.time() - start_time
+    elapsed_time = timedelta(seconds=round(elapsed_time_secs))
+    print(f"\n\n\nScript execution took: {elapsed_time}")
+
 
 if __name__ == "__main__":
     main()
@@ -146,15 +166,14 @@ if __name__ == "__main__":
 
 """ Note:
 
- 1 The specific Org might have more than one peer connections in one or more IXs.
- The additional information provides the Orgs list and nummber of connections
+ 1 The additional information shows the IXs or Orgs list with redundnact connections
 
  2 The output json file will be exported to mysql database used for web app
 
- 3 The peeringdb output is nested dictionary. some data need to be retrived from inner dict()
+ 3 The peeringdb output is a nested dictionary. some data needs to be retrived from inner dict()
 
  4 Ocationally the peeringDB API server doesn't respond to https request, that will interupt the running script.
-   this will occurs likely when the network being queried has widely distributed in >50 IXs
+   It likely occur when the querring network presents in >50 IXs
 
  5 Use ASN = 49909/49902/49904 or ASN = 852 for quick test as all that only exist in less than 3x IXs.
 
