@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-        <title>My db page</title>
+        <title>My peeringdb page</title>
     </head>
 
     <body>
@@ -19,37 +19,19 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">Home</a>
-                    <a class="navbar-brand" href="#">Dababase</a>
-                    <a class="navbar-brand" href="about">About</a>
+                    <a class="navbar-brand" href="db">Database</a>
+                    <a class="navbar-brand" href="#">About</a>
 
                 </div>
             </div>
         </nav>
 
 
-        <div class="container">
-            <div>
-                Sync the database with comments when there are more source data imported !
-            </div>
-            {% for comment in comments %}
-                <div class="row">
-                    {{ comment }}
-                </div>
-            {% endfor %}
+        <div class="about-section">
+          <h1>PeeringDB App</h1>
+          <p>Python + Flask + Mysql </p>
+          <p>BZ / July 2021</p>
+        </div>
 
-            <div class="row">
-                <form action="" method="POST">
-                    <textarea name="contents" placeholder="Enter a comment" class="form-control"></textarea>
-                    <input type="submit" class="btn btn-success" value="DB Sync">
-                </form>
-            </div>
-
-            {% if cnt > 0 %}
-                <div>
-                    The new records added to database : {{ cnt }}
-                </div>
-            {% endif %}
-
-        </div><!-- /.container -->
     </body>
 </html>

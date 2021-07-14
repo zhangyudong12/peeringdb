@@ -42,6 +42,7 @@ class Asn(db.Model):
     def __repr__(self):
         return '[ASN {}]'.format(self.ASN)
 
+
 def asn_query():
     return Asn.query
 
@@ -62,9 +63,10 @@ class Ix(db.Model):
         self.Ix_name = Ix_name
         self.Net_name = Net_name
 
-comments = ['Sync is executed.']
+comments = []
 
-def db_sync():
+
+def db_sync(cnt_in):
     dirname = '/home/zhangyudong13/mysite'
     subfolders= [f.name for f in os.scandir(dirname) if f.is_dir()]
     sublog_list = []
@@ -92,6 +94,7 @@ def db_sync():
             existing_asn = Asn.query.filter(Asn.ASN == asn_report["ASN"]).first()
             asn_id = existing_asn.id
             data_reload = True
+            cnt_in  += 1
 
         if data_reload:
             for ix,net in ix_report.items():
@@ -103,7 +106,10 @@ def db_sync():
         report_file1.close()
         report_file2.close()
 
-#db_sync()
+    return(cnt_in)
+
+#db_sync(cnt)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -120,14 +126,22 @@ def index():
 
     return render_template('index.html', form=form)
 
+
 @app.route('/db', methods=['GET', 'POST'])
 def db_mgmt():
-    if request.method == "GET":
-        return render_template("db.html", comments=comments)
+    cnt_return = 0
+    if request.method == "POST":
+        comments.append(request.form["contents"])
+        cnt_return = db_sync(0)
+        return redirect(url_for('db_mgmt'))
 
-    comments.append(request.form["contents"])
-    db_sync()
-    return redirect(url_for('db_mgmt'))
+    return render_template("db.html", comments=comments, cnt=cnt_return)
+
+
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
