@@ -102,7 +102,8 @@ def db_sync():
 
         report_file1.close()
         report_file2.close()
-db_sync()
+
+#db_sync()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -120,13 +121,13 @@ def index():
     return render_template('index.html', form=form)
 
 @app.route('/db', methods=['GET', 'POST'])
-def db():
+def db_mgmt():
     if request.method == "GET":
         return render_template("db.html", comments=comments)
 
     comments.append(request.form["contents"])
     db_sync()
-    return redirect(url_for('db'))
+    return redirect(url_for('db_mgmt'))
 
 if __name__ == '__main__':
     app.run(debug=True)
