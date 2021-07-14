@@ -33,11 +33,18 @@ script_cmd_output.txt file (when "output to file" is checked)
 ## website
 http://zhangyudong12.pythonanywhere.com/
 
-## environment 
+http://zhangyudong13.pythonanywhere.com/
+
+http://zhangyudong13.pythonanywhere.com/db
+
+
+## Environment 
 
 flask + mysql
 
 ## Input
+the below 2x files under any subdirectory with format log_xxx
+
 asn_report.json file
 
 ix_net_report.json file
