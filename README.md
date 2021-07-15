@@ -19,9 +19,9 @@ output to file y/n ?
 
 total IXs, total peers, total unique peering organizations, aggregate peering speed,peerings network list per IX, orgination list which has more connection points
 
-asn_report.json file
+asn_report.json
 
-ix_net_report.json file
+ix_net_report.json
 
 report on screen ( when "output to file" is not checked)
 
@@ -34,8 +34,6 @@ script_cmd_output.txt file (when "output to file" is checked)
 http://zhangyudong12.pythonanywhere.com/
 
 http://zhangyudong13.pythonanywhere.com/
-
-http://zhangyudong13.pythonanywhere.com/db
 
 
 ## Environment 
@@ -61,6 +59,8 @@ Display ASN and IX report in table format
 
 # File list
 peeringdb.py - main script
+
+peeringdb_ms.py - multi-threading and refacoring script
 
 script_cmd_output.txt - report output from script
 
