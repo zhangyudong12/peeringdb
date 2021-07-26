@@ -1,0 +1,37 @@
+Host application in GKE cluster
+
+1st time deployment:
+  Create image dockerfile
+  Upload container image to gcr.io (google container registry) 
+  Create GKE cluster
+  Create app deployment
+  Create app service 
+  Create Cloudsql mysql database - peeringdb
+  Create cloudsql-proxy container deployment
+  Connect app to cloudsql-proxy via cluster-ip
+  kubectl get pods - get web app pod
+  kubectl exec -it 'pdbpod' /bin/bash
+   import python
+    from app import db
+    db.create_all()
+  
+Update the deployment:
+  update source code
+  go to home folder
+  # v4 as example
+    docker build -t pdb:v4 .
+    docker tag pdb:v4 gcr.io/lucky-reactor-320314/pdb:v4
+    docker push gcr.io/lucky-reactor-320314/pdb:v4
+    update deployment file "image link"
+    kubectl apply -f flask_deployment.yaml
+    kubectl get pods to verify
+    
+
+Caveat :
+1 Use db.text instead of db.string for db.column if large string is expected
+2 If the container need keyboard input/output, include
+        stdin: true
+        tty: true
+3 For cloudsql connection via public IP, the auth-network approach via 0.0.0.0/0 seems not work to bypass proxy, at least not work using sqlalchemy
+4 There are two approach to connect the app to cloudsql-proxy. One is to create standalong proxy container, then call cluster-ip from the app; 
+  The other one is to create 'side car' proxy container under the same pod hosting app, then the app call proxy from 127.0.0.1:port
