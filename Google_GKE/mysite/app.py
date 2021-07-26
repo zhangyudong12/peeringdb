@@ -1,9 +1,15 @@
-from flask import Flask, redirect, render_template, request, url_for, make_response
+from flask import Flask, redirect, render_template, request, url_for, make_response,flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms_sqlalchemy.fields import QuerySelectField
 import json
 import os
+import requests
+import sys
+import time
+import re
+from datetime import timedelta
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -122,6 +128,143 @@ def db_sync():
 
 #db_sync()
 
+apiurl = 'https://www.peeringdb.com/api/'
+
+
+def fetchResults(url):
+    try:
+        response = requests.get(url)
+        response = json.loads(response.text)
+    except:
+        print("Error: Didn't receive a valid response when calling %s" % url)
+        exit(1)
+    return response
+
+
+def lookupNet(search):
+    url = "%snet?id=%s" % (apiurl, search)
+    results = fetchResults(url)
+    return results['data'][0]['name']
+
+
+# input:asn, output:IX list and network aggrerate speed of all IXs
+def getIX(search):
+    url = "%snet?asn=%s&depth=2" % (apiurl, search)
+    results = fetchResults(url)
+    if not results['data']:
+        print(f"AS{search} not found in PeeringDB")
+        return
+    ix_speed = 0
+    ix_list = []
+    fac_list = []
+    ix_urls = []
+    fac_urls = []
+    for key in sorted(results['data'][0]):
+        if key == 'netixlan_set':
+            for ixlan in results['data'][0][key]:
+                ix_speed = ix_speed + int(ixlan['speed'])
+                url = "%six?ixlan_id=%s" % (apiurl, ixlan['ixlan_id'])
+                ix_urls.append(url)
+            with ThreadPoolExecutor(max_workers=10) as executor:
+                ix_results_list = executor.map(fetchResults, ix_urls, timeout=60)
+            for ix_results in ix_results_list:
+                ix_list.append(ix_results['data'][0]['name'])
+
+        elif key == 'netfac_set':
+            for fac in results['data'][0][key]:
+                url = "%sfac?id=%s" % (apiurl, fac['fac_id'])
+                fac_urls.append(url)
+            with ThreadPoolExecutor(max_workers=10) as executor:
+                fac_results_list = executor.map(fetchResults, fac_urls, timeout=60)
+            for fac_results in fac_results_list:
+                fac_list.append(fac_results['data'][0]['name'])
+
+    ix_list.sort()
+    fac_list.sort()
+    return ix_list,fac_list,ix_speed
+
+
+# input:IX name and asn, output:sorted network list exclude the input asn
+def findPeerings(search, asn):
+    # match exact name
+    url = "%six?name=%s" % (apiurl, search)
+    results = fetchResults(url)
+    net_list = []
+    net_ids = []
+    net_names = []
+    net_asns = []
+    for ix in results['data']:
+        ix_id = ix['id']
+        url2 = "%snetixlan?ix_id=%s" % (apiurl, ix_id)
+        results2 = fetchResults(url2)
+        for net in results2['data']:
+            net_asn = net['asn']
+            if net_asn != asn:
+                net_id = net['net_id']
+                net_ids.append(net_id)
+                net_asns.append(net_asn)
+
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            net_names = executor.map(lookupNet, net_ids, timeout=60)
+
+        for net_name, net_asn in zip(net_names, net_asns):
+            net_name_alias = 'AS_' + str(net_asn) + '_' + net_name
+            net_list.append(net_name_alias)
+
+            # matches = re.search(r'\u\d', net_name)
+            # if matches:
+            #     net_name_alias = 'AS_' + 'unprintable_name'
+            # else:
+            #     net_name_alias = 'AS_' + str(net_asn) + '_' + net_name
+            # net_list.append(net_name_alias)
+
+    net_list.sort()
+    return net_list
+
+
+def print_report(title,input,flag):
+    print("\n")
+    print('~' * 79)
+    print(title)
+    print('~' * 79)
+    if type(input) == dict:
+        if flag == 'join':
+            for key,value in input.items():
+                sub_total_peers = len(value)
+                print(f"\nIX: {key}   Peering's : {sub_total_peers}")
+                print('\n'.join(value))
+
+        else:
+            for key,value in input.items():
+                print (key,value)
+    elif type(input) == list:
+        input_set = set(input)
+        item_count = {item: input.count(item) for item in input_set}
+        for item, count in item_count.items():
+            if count > 1:
+                print(f"{item} : #number of connections  {count}")
+            else:
+                continue
+    else:
+        print("Wrong input")
+        exit(1)
+
+def export_file(file_name,contents,asn):
+    newdir = 'log_' + str(asn)
+    try:
+        os.mkdir(newdir)
+    except OSError as error:
+        # FileExistsError is error # 17
+        if error.errno == 17:
+            print('Data already exists.')
+        else:
+            # re-raise the exception if some other error occurred.
+            raise
+    filename_full = os.path.join(newdir, file_name)
+    with open(filename_full, 'w') as json_file:
+        json.dump(contents, json_file, indent=2)
+    json_file.close()
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -154,20 +297,83 @@ def query():
     dirname = '/app'
     if request.method == "POST":
         asn = request.form.get('asn')
+        
+        # Process input variable
+        orig_stdout = sys.stdout
+        output_filename = 'script_cmd_output_' + str(asn) + '.txt'
+        f = open(output_filename, 'w')
+        sys.stdout = f
+        flash('Query report generated ---')
+
+        start_time = time.time()
+
+        # Process ASN query data
+        if getIX(asn) != None:
+            ix_list_asn, fac_list_asn, total_agg_speed_m = getIX(asn)
+            ix_set_asn = set(ix_list_asn)
+            total_agg_speed = total_agg_speed_m/1000
+            total_ix = len(ix_set_asn)
+            total_fac = len(fac_list_asn)
+            ix_set_asn_str = '\n'.join(ix_set_asn)
+            fac_list_asn_str = '\n'.join(fac_list_asn)
+
+            print('~' * 79)
+            print(f"Network with ASN = {asn} exists in {total_ix} Public Exchange Points and {total_fac} Private Peering Facilities")
+            print(f"\nPublic IXs:\n{ix_set_asn_str}")
+            if total_fac != 0:
+                print(f"\nPrivate FAs:\n{fac_list_asn_str}")
+
+            # sort the output data to dict
+            all_peers = dict()
+            for ix in ix_set_asn:
+                all_peers[ix] = findPeerings(ix,asn)
+
+            # deduplication
+            mergedlist = []
+            for ix in all_peers:
+                mergedlist.extend(all_peers[ix])
+            mergedlist.sort()
+            total_peers = len(mergedlist)
+            mergedset = set(mergedlist)
+            total_organizations = len(mergedset)
+
+            asn_report = {"ASN":asn,"Total_agg_speed(Gbps)":total_agg_speed,"Total_ix":total_ix,"Total_peers":total_peers,"Total_organizations":total_organizations}
+
+            # export report to file
+            filename1 = 'asn_report.json'
+            filename2 = 'ix_net_report.json'
+            export_file(filename1, asn_report, asn)
+            export_file(filename2, all_peers, asn)
+
+            # print report
+            print_report("ASN Network Executive Summary :", asn_report, 'na')
+            print_report("ASN Peering's List per Public IX :", all_peers, 'join')
+            print_report("The additional information for IXs where the ASN has more connections: ",ix_list_asn,'na')
+            print_report("The additional information for peering's with more than one connection points:: ",mergedlist,'na')
+
+            # calculate and display script running time
+            elapsed_time_secs = time.time() - start_time
+            elapsed_time = timedelta(seconds=round(elapsed_time_secs))
+            print(f"\n\n\nScript execution took: {elapsed_time}")
+
+            f.close()
+        else:
+            message = "ASN:{asn_id} is not found !".format(asn_id=asn)
+            return  render_template("display2.html", message=message)
+
         filename = 'script_cmd_output_' + asn + '.txt'
-        subfolder = 'log_' + asn
-        filename_full = os.path.join(dirname, subfolder, filename)
+        filename_full = os.path.join(dirname, filename)        
         if os.path.isfile(filename_full):
             f = open(filename_full,'r')
-            message = "ASN:{asn_id} query function to be intergated !".format(asn_id=asn)
             message = f.read()
             return  render_template("display2.html", message=message)
         else:
             message = "ASN:{asn_id} output file not exist !".format(asn_id=asn)
             return  render_template("display2.html", message=message)
 
-    if request.method == "GET":
+    elif request.method == "GET":
         return  render_template("query.html")
+
 
 @app.route('/about', methods=['GET'])
 def about():
