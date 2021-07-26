@@ -1,37 +1,114 @@
 Host application in GKE cluster
 
 1st time deployment:
-  Create image dockerfile
-  Upload container image to gcr.io (google container registry) 
-  Create GKE cluster
-  Create app deployment
-  Create app service 
-  Create Cloudsql mysql database - peeringdb
-  Create cloudsql-proxy container deployment
-  Connect app to cloudsql-proxy via cluster-ip
-  kubectl get pods - get web app pod
-  kubectl exec -it 'pdbpod' /bin/bash
-   import python
-    from app import db
-    db.create_all()
+
+    Create image dockerfile
+    Upload container image to gcr.io (google container registry) 
+    Create GKE cluster
+    Create app deployment
+    Create app service 
+    Create Cloudsql mysql database - peeringdb
+    Create cloudsql-proxy container deployment
+    Connect app to cloudsql-proxy via cluster-ip
+    kubectl get pods - get web app pod
+    kubectl exec -it 'pdbpod' /bin/bash
+     import python
+      from app import db
+      db.create_all()
   
 Update the deployment:
-  update source code
-  go to home folder
-  # v4 as example
-    docker build -t pdb:v4 .
-    docker tag pdb:v4 gcr.io/lucky-reactor-320314/pdb:v4
-    docker push gcr.io/lucky-reactor-320314/pdb:v4
-    update deployment file "image link"
-    kubectl apply -f flask_deployment.yaml
-    kubectl get pods to verify
+
+    update source code
+    go to home folder
+    # v4 as example
+      docker build -t pdb:v4 .
+      docker tag pdb:v4 gcr.io/lucky-reactor-320314/pdb:v4
+      docker push gcr.io/lucky-reactor-320314/pdb:v4
+      update deployment file "image link"
+      kubectl apply -f flask_deployment.yaml
+      kubectl get pods to verify
     
+cloudsql command:
+
+      $ gcloud sql connect mysql-ins-1 --user=root
+      
+      mysql> use peering db
+      ERROR 1049 (42000): Unknown database 'peering'
+      mysql> use peeringdb;
+      Reading table information for completion of table and column names
+      You can turn off this feature to get a quicker startup with -A
+
+      Database changed
+      mysql> show tables;
+      +---------------------+
+      | Tables_in_peeringdb |
+      +---------------------+
+      | asns                |
+      | ixs                 |
+      +---------------------+
+      2 rows in set (0.03 sec)
+
+      mysql> select * from asns where id >1 ;
+      +----+-------+----------+----------------------+-------------+---------------------+
+      | id | ASN   | Total_ix | Total_agg_speed_Gbps | Total_peers | Total_organizations |
+      +----+-------+----------+----------------------+-------------+---------------------+
+      |  2 |   701 |        3 |                   30 |         745 |                 452 |
+      |  3 |  4134 |        7 |                  460 |        3828 |                2010 |
+      |  4 |  9116 |        3 |                   90 |        2386 |                1380 |
+      |  5 | 49909 |        3 |                    5 |         188 |                 111 |
+      |  6 | 49904 |        1 |                    0 |         347 |                 340 |
+      |  7 |   123 |        0 |                    0 |           0 |                   0 |
+      |  8 | 12345 |        0 |                    0 |           0 |                   0 |
+      |  9 | 49902 |        2 |                   22 |         581 |                 434 |
+      +----+-------+----------+----------------------+-------------+---------------------+
+      8 rows in set (0.03 sec)
+
+      mysql> describe ixs;
+      +----------+---------------+------+-----+---------+----------------+
+      | Field    | Type          | Null | Key | Default | Extra          |
+      +----------+---------------+------+-----+---------+----------------+
+      | id       | int(11)       | NO   | PRI | NULL    | auto_increment |
+      | asn_id   | int(11)       | YES  | MUL | NULL    |                |
+      | Ix_name  | varchar(4096) | YES  |     | NULL    |                |
+      | Net_name | text          | YES  |     | NULL    |                |
+      +----------+---------------+------+-----+---------+----------------+
+      4 rows in set (0.03 sec)
+
+      mysql> delete from  ixs where asn_id=3;
+      Query OK, 7 rows affected (0.04 sec)
+
+      mysql> delete from  asns where id=3;
+      Query OK, 1 row affected (0.04 sec)
+      
+      
+kubectl command:
+
+
+    zhangyudong12@cloudshell:~/mysite (lucky-reactor-320314)$ kubectl get nodes
+    NAME                                        STATUS   ROLES    AGE    VERSION
+    gke-peeringdbc-default-pool-5d20f9d5-5vss   Ready    <none>   5d3h   v1.19.9-gke.1900
+    gke-peeringdbc-default-pool-5d20f9d5-g6jk   Ready    <none>   5d3h   v1.19.9-gke.1900
+    gke-peeringdbc-default-pool-5d20f9d5-mb3d   Ready    <none>   5d3h   v1.19.9-gke.1900
+    
+    zhangyudong12@cloudshell:~/mysite (lucky-reactor-320314)$ kubectl get pods
+    NAME                                    READY   STATUS    RESTARTS   AGE
+    cloudsql-proxy-7d9f855b94-2gbtt         1/1     Running   0          3d1h
+    pdb-web-6b895d7dd5-m5mfp                1/1     Running   0          4m35s
+    peeringdb-deployment-8499784996-6wpgt   1/1     Running   0          5d1h
+    peeringdb-deployment-8499784996-qjdf7   1/1     Running   0          5d1h
+    
+    zhangyudong12@cloudshell:~/mysite (lucky-reactor-320314)$ kubectl get svc
+    NAME             TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
+    cloudsql-proxy   ClusterIP      10.20.11.17   <none>           3306/TCP       3d3h
+    kubernetes       ClusterIP      10.20.0.1     <none>           443/TCP        5d3h
+    pdb              LoadBalancer   10.20.3.125   104.198.59.236   80:30532/TCP   4d7h
 
 Caveat :
-1 Use db.text instead of db.string for db.column if large string is expected
-2 If the container need keyboard input/output, include
-        stdin: true
-        tty: true
-3 For cloudsql connection via public IP, the auth-network approach via 0.0.0.0/0 seems not work to bypass proxy, at least not work using sqlalchemy
-4 There are two approach to connect the app to cloudsql-proxy. One is to create standalong proxy container, then call cluster-ip from the app; 
-  The other one is to create 'side car' proxy container under the same pod hosting app, then the app call proxy from 127.0.0.1:port
+
+    1 Use db.text instead of db.string for db.column if large string is expected
+    2 If the container need keyboard input/output, include
+            stdin: true
+            tty: true
+    3 For cloudsql connection via public IP, the auth-network approach via 0.0.0.0/0 seems not work to bypass proxy, at least not work using sqlalchemy
+    4 There are two approach to connect the app to cloudsql-proxy. One is to create standalong proxy container, then call cluster-ip from the app; 
+      The other one is to create 'side car' proxy container under the same pod hosting app, then the app call proxy from 127.0.0.1:port
