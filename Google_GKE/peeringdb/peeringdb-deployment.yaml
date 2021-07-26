@@ -1,0 +1,23 @@
+apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: peeringdb-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: peeringdb
+  template:
+    metadata:
+      labels:
+        app: peeringdb
+    spec:
+      containers:
+      - name: peeringdb-container
+        image: gcr.io/lucky-reactor-320314/peeringdb_ms:latest
+        stdin: true
+        tty: true
+        resources:
+          requests:
+            cpu: 100m
+            memory: 500Mi
