@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdb-web
+  labels:
+    app: pdb
+spec:
+  selector:
+    matchLabels:
+      app: pdb
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: pdb
+        tier: web
+    spec:
+      containers:
+      - name: pdb-app
+        image: gcr.io/lucky-reactor-320314/pdb:v15
+        ports:
+        - containerPort: 8080
+        # Set environment variables for the container.
+        env:
+          - name: PORT
+            value: "8080"
+
+
