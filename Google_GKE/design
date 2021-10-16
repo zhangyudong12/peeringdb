@@ -111,4 +111,4 @@ Caveat :
             tty: true
     3 For cloudsql connection via public IP, the auth-network approach via 0.0.0.0/0 seems not work to bypass proxy, at least not work using sqlalchemy
     4 There are two approach to connect the app to cloudsql-proxy. One is to create standalong proxy container, then call cluster-ip from the app; 
-      The other one is to create 'side car' proxy container under the same pod hosting app, then the app call proxy from 127.0.0.1:port
+      The other one is to create 'side car' proxy container under the same pod hosting app, then the app call proxy from 127.0.0.1:port.
